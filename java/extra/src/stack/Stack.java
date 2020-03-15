@@ -1,23 +1,23 @@
 package stack;
 
 public class Stack {
-	private int[]ary=null;
-	private int top;
+	private Node head=null;
+
 	
-	public Stack(int index) {
-		ary=new int[index];
-		top=0;
+	public Stack() {
+
 	}
 	public void push(int num) {
-		if(top<=ary.length)
-			ary[top++]=num;
-		
+
+		head=new Node(this.head,num);
 	}
 	public int pop() {
-		return ary[--top];
+		int tmp=head.getData();
+		this.head=head.getNext();
+		return tmp;
 	}
 	public boolean isEmpty() {
-		return top==0;
+		return (head==null);
 	}
 	
 }
