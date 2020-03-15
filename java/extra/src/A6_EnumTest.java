@@ -16,7 +16,7 @@ enum Country{
 }
 
 
-public class EnumTest {
+public class A6_EnumTest {
 	public static void main(String[]args) {
 		Week today=Week.WED;
 		Week nextDay=Week.valueOf("SAT");
