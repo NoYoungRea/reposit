@@ -1,7 +1,10 @@
 
 public class SingleTonPattern {
-	public SingleTonPattern() {
+	private SingleTonPattern() {
 		
+	}
+	public static SingleTonPattern getInstance() {
+		return new SingleTonPattern();
 	}
 
 }
