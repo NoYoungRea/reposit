@@ -13,10 +13,10 @@ public class AppStart {
 		Car c2=new Car("meri");
 		c.showInfo();
 
-		Car.Engine e=c.new Engine(5000);
+		Car.Engine e=new Car.Engine(5000);
 		e.on();
 
-		//System.out.println(c.Engine.ENGINE_TYPE); error
+		System.out.println(Car.Engine.Engine_Type); 
 
 	}
 }

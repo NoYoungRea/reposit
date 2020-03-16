@@ -24,7 +24,7 @@ public class Car {
 		public abstract void run();
 	}
 
-	class Engine{
+	static class Engine{
 		public static final String Engine_Type="marine";
 		private int displacement;
 
@@ -42,7 +42,7 @@ public class Car {
 
 		public void on() {
 			System.out.println(Car.TYPE);
-			System.out.println(Car.this.name);
+			//System.out.println(Car.this.name);
 			System.out.println(displacement);
 			System.out.println(Engine.Engine_Type);
 		}
