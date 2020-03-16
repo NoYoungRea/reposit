@@ -17,6 +17,6 @@ public class AppStart {
 		e.on();
 		
 		//System.out.println(c.Engine.ENGINE_TYPE); error
-
+		System.out.println(Car.Engine.Engine_Type);
 	}
 }
