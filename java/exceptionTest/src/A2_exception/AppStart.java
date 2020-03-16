@@ -11,6 +11,9 @@ public class AppStart {
 			int a=10/0;
 
 		}
+		catch (Exception e) {
+			//all of them is cetched by here
+		}
 		catch(IOException e) {
 			System.out.println("read");
 			e.printStackTrace();
