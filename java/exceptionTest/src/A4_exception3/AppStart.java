@@ -4,7 +4,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 
 public class AppStart {
-	public static void func() {
+	public static void func() throws Exception{
 		FileInputStream fis = null;
 		try {
 			fis = new FileInputStream("data.txt");
@@ -12,7 +12,7 @@ public class AppStart {
 
 		catch (IOException e) {
 			System.out.println("x");
-
+			throw e;	
 		}
 		finally {
 			try {
@@ -26,6 +26,11 @@ public class AppStart {
 	}
 
 	public static void main(String[] args) {
-		func();
+		try {
+			func();
+		}
+		catch(Exception e){
+			
+		}
 	}
 }
