@@ -1,20 +1,21 @@
 package exceptionTest1;
 
 public class AppStart1 {
-	public void a() {
+	public void a()throws NumberFormatException {
 		b();
 	}
-	public void b() {
+	public void b()throws NumberFormatException {
 		c();
 	}
-	public void c() {
+	public void c() throws NumberFormatException{
 		String str="shdudfo";
 		Double d=Double.parseDouble(str);
 		System.out.println(d);
 	}
 
-	public static void main(String[] args) {
+	public static void main(String[] args)throws NumberFormatException {
 		AppStart1 app=new AppStart1();
 		app.a();
+
 	}
 }
