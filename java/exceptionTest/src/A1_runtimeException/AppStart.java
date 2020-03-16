@@ -1,4 +1,4 @@
-package exceptionTest1;
+package A1_runtimeException;
 
 public class AppStart {
 
