@@ -4,9 +4,10 @@ import java.io.IOException;
 
 public class AppStart {
 	public static void main(String[] args) {
+		int n=0;
 		try {
 			System.out.print("input:");
-			int n=System.in.read();
+			n=System.in.read();
 			int a=10/0;
 
 		}
@@ -19,7 +20,7 @@ public class AppStart {
 			e.printStackTrace();
 		}
 		finally {
-			System.out.println("done");
+			System.out.println(n);
 		}
 	}
 }
