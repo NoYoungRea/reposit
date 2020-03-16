@@ -19,6 +19,8 @@ public class Student {
 	}
 	//-----------------------------------
 	public void study() {
+		int a;
+		a=10;
 		class Book{
 			String bookName;
 			int price;
