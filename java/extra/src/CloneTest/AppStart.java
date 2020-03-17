@@ -3,9 +3,9 @@ package CloneTest;
 public class AppStart {
 	public static void main(String[] args) {
 
-		Car c = new Car("benz", "Black");
+		SportCar c = new SportCar("benz", "Black",30);
 		try {
-			Car newCar = (Car)c.clone();
+			SportCar newCar = (SportCar)c.clone();
 			System.out.println(c.toString());
 			System.out.println(newCar.toString());
 		} catch (CloneNotSupportedException e) {
