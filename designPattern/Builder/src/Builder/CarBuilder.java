@@ -30,6 +30,6 @@ public class CarBuilder {
 	}
 
 	public Car getInstance() {
-		return new Car(car.getName(),car.getColor(),car.getDisp());
+		return car;//new Car(car.getName(),car.getColor(),car.getDisp());
 	}
 }
