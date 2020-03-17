@@ -5,13 +5,12 @@ public class CarBuilder {
 	private static CarBuilder builder = null;
 
 	private CarBuilder() {
-
+		this.car=new Car("sonata", "black", 2500);
 	}
 
 	public static CarBuilder getBuilder() {
 		if (builder == null)
 			builder = new CarBuilder();
-		builder.car = new Car("sonata", "black", 2500);
 		return builder;
 	}
 
@@ -31,6 +30,6 @@ public class CarBuilder {
 	}
 
 	public Car getInstance() {
-		return car;
+		return new Car(car.getName(),car.getColor(),car.getDisp());
 	}
 }
