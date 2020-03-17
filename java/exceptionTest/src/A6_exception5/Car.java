@@ -6,7 +6,9 @@ public class Car {
 	public Car(int fuel) {
 		this.fuel = fuel;
 	}
-
+	public void setFuel(int fuel) {
+		this.fuel=fuel;
+	}
 	public void run(int dist) {
 		if((dist/10)<=fuel) {
 			System.out.println(dist+"km");
@@ -14,10 +16,12 @@ public class Car {
 			System.out.println("fuel"+fuel+"left");
 			return;
 		}
-		else {
-			fuel=100;
-			run(dist);
+		try {
+			throw new NotEnoughFuelException();
 		}
-		
+		catch(NotEnoughFuelException e) {
+			e.doExcept(this,dist);
+		}
 	}
+
 }
