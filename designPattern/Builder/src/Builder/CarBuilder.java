@@ -3,8 +3,11 @@ package Builder;
 public class CarBuilder {
 	private Car car;
 	
-	public CarBuilder() {
+	private CarBuilder() {
 		this.car=new Car("sonata","black",2500);
+	}
+	public static CarBuilder getBuilder() {
+		return new CarBuilder();
 	}
 	
 	public CarBuilder setName(String name) {
