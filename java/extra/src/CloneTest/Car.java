@@ -31,8 +31,9 @@ public abstract class Car implements Cloneable{
 	public Object clone() throws CloneNotSupportedException{
 		Object o=super.clone();
 		Car car=(Car)o;
-		car.name=this.name;
-		car.color=this.color;
+		/*
+		 * car.name=this.name; car.color=this.color;
+		 */
 		return car;
 		
 	}
