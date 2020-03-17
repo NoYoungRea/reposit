@@ -5,7 +5,8 @@ public class AppStart {
 
 		Object c = new SportCar("benz", "Black",30);
 		try {
-			SportCar newCar = (SportCar)((SportCar)c).clone();
+			SportCar tmp=(SportCar)c;
+			SportCar newCar = (SportCar)tmp.clone();
 			newCar.setMaxSpeed(250);
 			System.out.println(c.toString());
 			System.out.println(newCar.toString());
