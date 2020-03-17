@@ -10,6 +10,11 @@ public class Car {
 		this.color=color;
 		this.disp=disp;
 	}
+	public Car(Car car) {
+		this.name=car.name;
+		this.color=car.color;
+		this.disp=car.disp;
+	}
 
 	public String getName() {
 		return name;
