@@ -1,8 +1,8 @@
 package equalsTest;
 
-public class Person {
-	private String name;
-	private int age;
+public abstract class Person {
+	protected String name;
+	protected int age;
 
 	public Person(String name, int age) {
 		this.name = name;
@@ -49,5 +49,6 @@ public class Person {
 			return false;
 		return true;
 	}
+	public abstract String getDescript();
 
 }
