@@ -16,7 +16,17 @@ public class Car {
 			System.out.println("fuel"+fuel+"left");
 			return;
 		}
+		try {
 		throw new NotEnoughFuelException();
+		}
+		catch(NotEnoughFuelException e) {
+			e.doExcept(this);
+		}
+		finally {
+			System.out.println(dist+"km");
+			fuel-=(dist/10);
+			System.out.println("fuel"+fuel+"left");
+		}
 	}
 
 }
