@@ -19,9 +19,11 @@ final method 더 이상 오버라이딩 할 수 없는 메소드
 generic에서는 오직 객체형만 사용 가능하다!
 ## api를 볼때 
 field summary 가 없다고 해서 필드가 없다고 생각하면 안 됨. 정보 은닉 한거.
-## java.lang패키에 소속된 클레스
-# Object(최상위클레스),System(입출력),Class(클레스 클레스),String,StringBuilder/Buffer,Math,Wrapper class
-## java.util패키지에 소속된 클레스(대부분이 컬렉션 클레스들이다.)
-# Arrays,Calendar,Date,Objects(객체비교,null 여부조사 등),StringTokenizer(문자열 뽑아낼때),Random
-## equals 주로 Objects의 것을 그대로 사용하기보다는(주소비교용) 오버라이딩하여 논리적비교를 할때 사용
-## equals() 리턴값은 true false인 반면 hasCode()는 객체를 식별할 값을 가지게 된다. 이것을 다른 곳. map이나 이런 곳에서 이용한다. 메소드를 재정의 하지 않으면 논리적인 관점보다는 물리적인 관점으로 데이터가 같더라도 다른 객체로 본다.
+# java.lang패키에 소속된 클레스
+Object(최상위클레스),System(입출력),Class(클레스 클레스),String,StringBuilder/Buffer,Math,Wrapper class
+# java.util패키지에 소속된 클레스(대부분이 컬렉션 클레스들이다.)
+Arrays,Calendar,Date,Objects(객체비교,null 여부조사 등),StringTokenizer(문자열 뽑아낼때),Random
+# equals()
+주로 Objects의 것을 그대로 사용하기보다는(주소비교용) 오버라이딩하여 논리적비교를 할때 사용
+# hashCode()
+equals() 리턴값은 true false인 반면 hasCode()는 객체를 식별할 값을 가지게 된다. 이것을 다른 곳. map이나 이런 곳에서 이용한다. 메소드를 재정의 하지 않으면 논리적인 관점보다는 물리적인 관점으로 데이터가 같더라도 다른 객체로 본다.
