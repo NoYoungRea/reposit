@@ -1,13 +1,15 @@
 package hashCodeTest1;
 
 public class Person {
-	int number;
+	int x;
+	int y;
 	
-	public Person(int number) {
-		this.number=number;
+	public Person(int x,int y) {
+		this.x=x;
+		this.y=y;
 	}
 	
 	public int hashCode() {
-		return number;
+		return x+y;
 	}
 }
