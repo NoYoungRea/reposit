@@ -1,11 +1,11 @@
-객체지향 개념들과 여러가지
---------------
-System.out.println(d.isNaN());
 
-
-main에 스테틱을 때버릴 순 없다. java Appstart 하면 클레스 이름을 통하여 main을 찾아들어가기 때문에
-
-static method에서 다른 메서드를 호출하려면 그 method도 static이 되어야 한다.
-
-
-지역 변수들은 해당 함수의 스텍프레임 내에 할당 되고 함수가 종료되면 없어진다. 이것은 소유주가 없기 때문에 public static private 등을 쓸 수 없다.
+## 유용한 command
+1. git remote remove origin
+2. git remote add origin https://github.com/계정/리포지토리
+3. 컨트롤 쉬프트 f
+4. git rm --cached <file>
+5. git fetch origin 을 하면 remote로 부터 내거를 최신 동기화 할 수 있다. 이 다음 git merge origin/master master을 통해 나의 master을 위로 쭉 올려준다.
+  
+## 캡슐화
+서로 관련성 있는 것을 묶어주기->캡슐화 함으로써 내부와 외부가 구분이 됨->내부에 있는 것을 숨길 수 있다.->추상화 정도를 높일 수 있음->독립성을 올리고
+의존도를 낮출 수 있음
