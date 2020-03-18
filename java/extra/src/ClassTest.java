@@ -12,7 +12,7 @@ public class ClassTest {
 		
 		Class cls=null;
 		try {
-		cls=Class.forName("Scanner");
+		cls=Class.forName("java.util.Scanner");
 
 	
 		}
