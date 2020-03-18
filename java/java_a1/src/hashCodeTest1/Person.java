@@ -1,20 +1,20 @@
 package hashCodeTest1;
 
 public class Person {
-	int x;
-	int y;
-	
-	public Person(int x,int y) {
-		this.x=x;
-		this.y=y;
+	String name;
+	int age;
+
+	public Person(String name,int age) {
+		this.name=name;
+		this.age=age;
 	}
-	
+
 	public int hashCode() {
 
-		int prime=31;
-		int hash=1;
-		hash=prime*hash+x;
-		hash=prime*hash+y;
+		int prime = 31;
+		int hash = 1;
+		hash = prime * hash + (name==null?0:name.hashCode());
+		hash = prime * hash + age;
 		return hash;
 	}
 }
