@@ -18,4 +18,7 @@ public class Student extends Person{
 		hash+=prime*hash+(new Double(jumsu).hashCode());
 		return hash;
 	}
+	public void finalize() {
+		System.out.println("S");
+	}
 }

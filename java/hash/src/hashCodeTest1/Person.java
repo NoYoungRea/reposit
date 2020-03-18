@@ -17,4 +17,8 @@ public class Person {
 		hash = prime * hash + age;
 		return hash;
 	}
+	public void finalize() {
+		System.out.println("S");
+	}
+
 }
