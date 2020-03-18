@@ -4,7 +4,7 @@ import java.util.Comparator;
 import java.util.Objects;
 import java.util.Scanner;
 
-public class ClassTest {
+public class A90_ClassTest {
 	public static void main(String[]args) {
 		Person p=new Person();
 		Class cp=p.getClass();
@@ -13,6 +13,7 @@ public class ClassTest {
 		Class cls=null;
 		try {
 		cls=Class.forName("java.util.Scanner");
+		
 
 	
 		}
