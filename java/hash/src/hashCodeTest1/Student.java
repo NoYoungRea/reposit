@@ -19,6 +19,7 @@ public class Student extends Person{
 		return hash;
 	}
 	public void finalize() {
+		super.finalize();
 		System.out.println("S");
 	}
 }
