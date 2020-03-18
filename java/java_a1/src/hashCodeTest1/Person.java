@@ -10,6 +10,11 @@ public class Person {
 	}
 	
 	public int hashCode() {
-		return x+y;
+
+		int prime=31;
+		int hash=1;
+		hash=prime*hash+x;
+		hash=prime*hash+y;
+		return hash;
 	}
 }
