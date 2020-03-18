@@ -2,9 +2,9 @@ package hashCodeTest1;
 
 public class Student extends Person{
 	String major;
-	Double jumsu;
+	double jumsu;
 	
-	public Student(String name, int age,String major,Double jumsu) {
+	public Student(String name, int age,String major,double jumsu) {
 		super(name,age);
 		this.major=major;
 		this.jumsu=jumsu;
@@ -15,7 +15,7 @@ public class Student extends Person{
 		int hash=1;
 		hash+=super.hashCode();
 		hash+=prime*hash+(major==null?0:major.hashCode());
-		hash+=prime*hash+jumsu;
+		hash+=prime*hash+(new Double(jumsu).hashCode());
 		return hash;
 	}
 }
