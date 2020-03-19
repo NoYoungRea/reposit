@@ -36,7 +36,7 @@ public class Member implements Comparable<Member>{
 		this.name = name;
 	}
 	public int compareTo(Member o) {
-		return -(new Integer(sum(this)).compareTo((sum(o))));
+		return -sum(this)-sum(o);
 	}
 	public int sum(Member o) {
 		return (o.kor+o.eng);
