@@ -1,4 +1,4 @@
-package abstractFactory;
+package ingredient;
 
 public class mozaCheese extends Cheese{
 	public String toString() {

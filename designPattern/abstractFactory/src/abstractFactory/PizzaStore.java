@@ -1,16 +1,20 @@
 package abstractFactory;
 
-public class PizzaStore {
-	private IngredientFactory factory;
+import Factory.Factory;
+import pizza.Pizza;
 
-	public void setFactory(IngredientFactory factory) {
+public abstract class PizzaStore {
+	protected Factory factory;
+	protected String name;
+
+	public void setFactory(Factory factory) {
 		this.factory = factory;
 	}
-	public Pizza order() {
-		Pizza pizza= new Pizza(factory.createDough(),factory.createSauce(),factory.createCheese());
-		System.out.println("from : "+factory);
-		System.out.println(pizza);
-		return pizza;
+	public Pizza order(String pizza) {
+		return factory.creatPizza(pizza);
+	}
+	public String toString() {
+		return "hello Welcome to "+name;
 	}
 	
 }
