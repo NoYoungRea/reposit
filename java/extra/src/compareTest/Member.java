@@ -16,6 +16,6 @@ public class Member implements Comparable<Member>{
 		this.name = name;
 	}
 	public int compareTo(Member o) {
-		return this.name.compareTo(o.name);
+		return -this.name.compareTo(o.name);
 	}
 }
