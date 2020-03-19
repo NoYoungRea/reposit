@@ -1,8 +1,8 @@
-package CalenderTest;
+package format;
 
 import java.text.DecimalFormat;
 
-public class FormatTest {
+public class DecimalTest {
 	public static void main(String[]args) {
 		int money=10000000;
 		double pi=31231.14195;

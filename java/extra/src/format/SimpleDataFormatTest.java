@@ -1,9 +1,9 @@
-package CalenderTest;
+package format;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
-public class Dataformat {
+public class SimpleDataFormatTest {
 	public static void main(String[] args) {
 		for (int i = 0; i < 10; i++) {
 			Calendar cal = Calendar.getInstance();

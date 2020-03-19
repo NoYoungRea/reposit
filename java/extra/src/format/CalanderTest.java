@@ -1,8 +1,8 @@
-package CalenderTest;
+package format;
 
 import java.util.Calendar;
 
-public class AppStart {
+public class CalanderTest {
 	public static void main(String[] args) {
 		Calendar cal = Calendar.getInstance();
 		StringBuilder sb = new StringBuilder();
