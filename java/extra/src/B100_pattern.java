@@ -1,7 +1,19 @@
 import java.util.regex.Pattern;
-public class B100_pattern {
-	public static void main(String[]args) {
+
+class PatternChecker {
+	public static boolean checkPhoneNumber(String myPhoneNumber) {
+		String phoneNumber ="\\d{2,3}-\\d{3,4}-\\d{4}";
+		return (Pattern.matches(phoneNumber, myPhoneNumber));
+	}
+	public static boolean checkEmail(String myEmail) {
 		String email="[a-z][\\w_]*@\\w+\\.(com|net|mil|gov)|((co|ac|ne)\\.(kr|jp))";
-		System.out.println(Pattern.matches(email, "rea2169@naver.com"));
+		return (Pattern.matches(email, myEmail));
+	}
+}
+
+public class B100_pattern {
+	public static void main(String[] args) {
+		System.out.println(PatternChecker.checkEmail("rea2169@naver.com"));
+		System.out.println(PatternChecker.checkPhoneNumber("010-3023-2169"));
 	}
 }
