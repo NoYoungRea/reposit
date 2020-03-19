@@ -36,12 +36,10 @@ public class Member implements Comparable<Member>{
 		this.name = name;
 	}
 	public int compareTo(Member o) {
-		Integer a=new Integer(sum(this));
-		Integer b=new Integer(sum(o));
-		return -a.compareTo(b);
+		return -(new Integer(sum(this)).compareTo((sum(o))));
 	}
 	public int sum(Member o) {
-		return o.eng+o.kor;
+		return (o.kor+o.eng);
 	}
 	public String toString() {
 		return String.format("%8s %4d %4d %4d %7.2f", name,kor,eng,(kor+eng),(kor+eng)/2.0);
