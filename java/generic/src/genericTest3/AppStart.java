@@ -26,5 +26,5 @@ class Map<K,V>{
 
 }
 public class AppStart {
-	Map<String,String> map =new Map<String,String>("1","hgd");
+	Map<String,String> map =new Map<>("1","hgd");
 }
