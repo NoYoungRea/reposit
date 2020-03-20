@@ -44,7 +44,7 @@ public class AppStart {
 	Map<Number,String> map =new Map<>(3.14,"hgd");
 	System.out.println(map.getKey()+" "+map.getValue());
 	
-	Map map2 =new Map("1",new Person("hgd"));
+	Map<String,Person> map2  =new Map<>("1",new Person("hgd"));
 	System.out.println(map2.getKey()+" : "+((Person)map2.getValue()).getName());
 	}
 }
