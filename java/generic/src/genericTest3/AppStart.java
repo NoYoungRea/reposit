@@ -26,5 +26,8 @@ class Map<K,V>{
 
 }
 public class AppStart {
-	Map<Integer,String> map =new Map<>(1,"hgd");
+	public static void main(String[]args) {
+	Map<Number,String> map =new Map<>(3.14,"hgd");
+	System.out.println(map.getKey()+" "+map.getValue());
+	}
 }
