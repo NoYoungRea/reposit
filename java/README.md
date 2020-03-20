@@ -5,6 +5,7 @@
 2. objects는 final 클레스. 즉, 있는 그대로 사용해야 한다. 생성자가 없음 new를 못함->자기자신을 반환하는 static 메소드가 있는지 보기-> 없음->객체를 만들지 못함. 즉, 인스턴스 멤버를 가지고있지 않은 static member만을 가지고 있음.
 3. calander를 보면 생성자가 protected즉, 밖에서 사용 못함. 자식(골게릭달력) 클레스를 봐야 함.
 4. Doc에서 final로 된거을 구별하는 법은 다 대문자로 되어 있음
+5. deprccated
 ## main의 스테틱
 때버릴 순 없다. java Appstart 하면 클레스 이름을 통하여 main을 찾아들어가기 때문이다.static method에서 다른 메서드를 호출하려면 그 method도 static이 되어야 한다.
 ## 생성자 오버로딩
@@ -88,9 +89,23 @@ System에서는 자바 센서에서는 c를 사용할때 서로 통신을 해야
 ## 동기화
 hashtable에서 동기화를 걷어낸 것이 hashmap
 StringBuffer에서 동기화를 걷어낸 것이 StringBuilder
+## 지역 변수
+해당 함수의 스텍프레임 내에 할당 되고 함수가 종료되면 없어진다. 이것은 소유주가 없기 때문에 public static private 등을 쓸 수 없다.
+## parse 와 valueof의 차이
+static double	parseDouble(String s)
+Returns a string representation of the double argument.
+static Double	valueOf(double d)
+Returns a Double instance representing the specified double value.
+static Double	valueOf(String s)
+Returns a Double object holding the double value represented by the argument string s.
 
-
-
-
-지역 변수들은 해당 함수의 스텍프레임 내에 할당 되고 함수가 종료되면 없어진다. 이것은 소유주가 없기 때문에 public static private 등을 쓸 수 없다.
-
+parse는 unwrap이고 valueof 은 특정 인수를 통한 객체 생성이다.
+## append에서 객체를 집어넣으면
+appenc(객체) tostring으로 출력되는 듯?
+## 배열 랜덤 저장
+rand 채워서 바꾸기 best
+## format
+메세지 포맷 잘 안씀 스트링 포맷을 주로씀(타입 자릿수 등 지정 못하는 이유 때문에)
+## primitive vs wrapper class
+primitive타입을 객체 타입으로 만들면 objects를 상속받을 수 있게 된다. 즉 다양한 기능을 사용할 수 있게 됨.
+객체로 만드는 것->박싱 객체로 부터 값을 꺼내는 것->언박싱
