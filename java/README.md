@@ -92,7 +92,7 @@ System에서는 자바 센서에서는 c를 사용할때 서로 통신을 해야
 hashtable에서 동기화를 걷어낸 것이 hashmap
 StringBuffer에서 동기화를 걷어낸 것이 StringBuilder
 ## 지역 변수
-해당 함수의 스텍프레임 내에 할당 되고 함수가 종료되면 없어진다. 이것은 소유주가 없기 때문에 public static private 등을 쓸 수 없다.
+해당 함수의 스텍프레임 내에 할당 되고 함수가 종료되면 없어진다. 이것은 소유주가 없기 때문에 public static private 등(접근 제한자)을 쓸 수 없다.
 ## parse 와 valueof의 차이
 static double	parseDouble(String s)
 Returns a string representation of the double argument.
