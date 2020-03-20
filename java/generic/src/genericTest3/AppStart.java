@@ -25,9 +25,26 @@ class Map<K,V>{
 	}
 
 }
+class Person{
+	private String name;
+	public Person(String name) {
+		this.name=name;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	
+}
 public class AppStart {
 	public static void main(String[]args) {
 	Map<Number,String> map =new Map<>(3.14,"hgd");
 	System.out.println(map.getKey()+" "+map.getValue());
+	
+	Map map =new Map("1",new Person("hgd"));
+	System.out.println(map.getKey()+" : "+map.getValue());
 	}
 }
