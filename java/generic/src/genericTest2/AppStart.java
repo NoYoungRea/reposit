@@ -15,7 +15,7 @@ class Box<T>{
 }
 public class AppStart {
 	public static void main(String[]args) {
-		Box box=new Box(new Integer(10));
+		Box<Integer> box=new Box<>(new Integer(10));
 		System.out.println(box.getMember());
 	}
 }
