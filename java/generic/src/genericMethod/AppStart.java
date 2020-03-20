@@ -2,7 +2,7 @@ package genericMethod;
 
 class Circle{
 	public<T> void func(T a) {
-			System.out.println("generidc methd is called")
+			System.out.println("generidc methd is called");
 		
 	}
 }
