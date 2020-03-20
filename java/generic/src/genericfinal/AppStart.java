@@ -33,7 +33,7 @@ public class AppStart {
 		return person;
 	}
 	public static void main(String[]args) {
-		Person<String, Integer> person=func("hgd",100);
+		Person<String, Integer> person=AppStart.<String,Integer>func("hgd",100);
 		System.out.println(person.getName()+" : "+person.getJumsu());
 	}
 }
