@@ -1,17 +1,15 @@
 package genericb1;
 
-interface Flyable<T>{
+interface Fightable{
 	
 }
-
-class Person<T>{
+class Fighter<T> implements Fightable{	
 	
 }
-
-class Duck implements Flyable<Integer>{
+class Duck{
 	
 }
-class Duck1<T> implements Flyable<T>{
+class MalleredDuck<T> extends Duck{
 	
 }
 
