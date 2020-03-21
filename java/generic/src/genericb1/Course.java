@@ -27,25 +27,14 @@ public class Course <T>{
 		this.students = students;
 	}
 	
-	public void add(T student) {
+	public <K extends Student>void add(K student) {
 		if (count<students.length) {
-			students[count++]=student;
+			System.out.println(student.getName()+" check");
+			students[count++]=(T)student;
 		}
 	}
 	private <K extends Student>void show(K obj) {
 		System.out.println(obj.getName()+" : "+obj.getMajor());
-	}
-	
-	public void showLis() {
-		
-		for(T obj:students) {
-			if(obj==null) {
-				break;
-			}
-			this.show(obj);//xxxxxx
-			
-			
-		}
 	}
 
 }
