@@ -1,6 +1,6 @@
 package genericb1;
 
-public class Course <T>{
+public class Course <T extends Person>{
 	private T student;
 	
 	public Course(T student) {
