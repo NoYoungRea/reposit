@@ -16,6 +16,9 @@ public class Worker extends Person{
 	public void setJob(String job) {
 		this.job = job;
 	}
+	public String toString() {
+		return name+"/"+job;
+	}
 	
 	
 }

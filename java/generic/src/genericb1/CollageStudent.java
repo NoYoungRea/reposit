@@ -17,6 +17,8 @@ public final class CollageStudent extends Student{
 	public void setGrade(int grade) {
 		this.grade = grade;
 	}
-	
+	public String toString() {
+		return super.toString()+"/"+grade;
+	}
 	
 }

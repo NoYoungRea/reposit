@@ -16,5 +16,8 @@ public class Student extends Person {
 	public void setMajor(String major) {
 		this.major = major;
 	}
+	public String toString() {
+		return name+"/"+major;
+	}
 	
 }
