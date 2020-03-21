@@ -36,5 +36,13 @@ public class Course <T>{
 	private <K extends Student>void show(K obj) {
 		System.out.println(obj.getName()+" : "+obj.getMajor());
 	}
+	public void showList() {
+		for(T obj:students) {
+			if(obj==null)break;
+			System.out.println();
+			
+			add((Student))
+		}
+	}
 
 }
