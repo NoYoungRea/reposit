@@ -13,6 +13,6 @@ class Person<T extends Number>{
 
 public class AppStart {
 	public static void main(String[]args) {
-		Person<String>p=new Person<>("shdudfo")//xxxxxx is can be number Type?;
+		//Person<String>p=new Person<>("shdudfo")//xxxxxx is can be number Type?;
 	}
 }
