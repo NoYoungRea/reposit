@@ -33,8 +33,12 @@ public class Course <T extends Student>{
 		}
 	}
 	public void showLis() {
+		
 		for(T obj:students) {
-			System.out.println(obj.getMajor()+" "+obj.getMajor());
+			if(obj==null) {
+				break;
+			}
+			System.out.println(obj.getName()+" "+obj.getMajor());
 			
 			
 		}

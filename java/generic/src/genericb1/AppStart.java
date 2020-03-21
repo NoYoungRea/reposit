@@ -9,5 +9,6 @@ public class AppStart {
 		Course<CollageStudent> c=new Course<>("allType",10);
 		//c.add(new Student("hgd","math"));
 		c.add(new CollageStudent("hgd","math",3));
+		c.showLis();
 	}
 }
