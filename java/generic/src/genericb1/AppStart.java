@@ -1,16 +1,9 @@
 package genericb1;
 
-interface Fightable{
-	
-}
-class Fighter<T> implements Fightable{	
-	
-}
-class Duck{
-	
-}
-class MalleredDuck<T> extends Duck{
-	
+class Person{
+	public<T> void show(T obj) {
+		
+	}
 }
 
 public class AppStart {
