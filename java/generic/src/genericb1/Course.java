@@ -1,12 +1,12 @@
 package genericb1;
 
-public class Course <T extends Student>{
+public class Course <T>{
 	private String courseName;
 	private T[]students;
 	private int count;
 	
 	public Course(String courseName, int capacity) {
-		students=(T[])(new Student[capacity]);
+		students=(T[])(new Object[capacity]);
 		this.courseName=courseName;
 		this.count=0;
 	}
@@ -32,13 +32,17 @@ public class Course <T extends Student>{
 			students[count++]=student;
 		}
 	}
+	private <K extends Student>void show(K obj) {
+		System.out.println(obj.getName()+" : "+obj.getMajor());
+	}
+	
 	public void showLis() {
 		
 		for(T obj:students) {
 			if(obj==null) {
 				break;
 			}
-			System.out.println(obj.getName()+" "+obj.getMajor());
+			this.show(obj);//xxxxxx
 			
 			
 		}
