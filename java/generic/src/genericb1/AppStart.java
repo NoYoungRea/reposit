@@ -8,6 +8,6 @@ class Person<T>{
 
 public class AppStart {
 	public static void main(String[]args) {
-		
+		Person<String>p=new Person<String>();
 	}
 }
