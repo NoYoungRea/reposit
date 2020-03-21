@@ -7,5 +7,7 @@ public class AppStart {
 		//Course<Worker> b=new Course<>("allType",10);
 		Course<Student> b=new Course<>("allType",10);
 		Course<CollageStudent> c=new Course<>("allType",10);
+		//c.add(new Student("hgd","math"));
+		c.add(new CollageStudent("hgd","math",3));
 	}
 }
