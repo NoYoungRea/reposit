@@ -3,16 +3,16 @@ package genericb1;
 import java.util.Arrays;
 
 public class AppStart {
-	static void showListPerson(Course<?> course){
+	static void showListPerson(Course<? super Person> course){
 		Arrays.toString(course.getStudents());
 	}
-	public static void showListStudent(Course<? extends Student>course) {
+	public static void showListStudent(Course<? super Student>course) {
 		Arrays.toString(course.getStudents());
 	}
-	public static void showListCollageStudent(Course<? extends CollageStudent>course) {
+	public static void showListCollageStudent(Course<? super CollageStudent>course) {
 		Arrays.toString(course.getStudents());
 	}
-	public static void showListWorker(Course<? extends Worker>course) {
+	public static void showListWorker(Course<? super Worker>course) {
 		Arrays.toString(course.getStudents());
 	}
 	public static void main(String[]args) {
@@ -22,21 +22,21 @@ public class AppStart {
 		Course<Worker> workerCourse=new Course<>("worker",10);
 		
 		showListPerson(personCourse);
-		showListPerson(studentCourse);
-		showListPerson(collageSturdnet);
-		showListPerson(workerCourse);
+		//showListPerson(studentCourse);
+		//showListPerson(collageSturdnet);
+		//showListPerson(workerCourse);
 		
-		//showListStudent(personCourse);//
+		showListStudent(personCourse);
 		showListStudent(studentCourse);
-		showListStudent(collageSturdnet);
-		//showListStudent(workerCourse);//
+		//showListStudent(collageSturdnet);
+		//showListStudent(workerCourse);
 		
-		//showListCollageStudent(personCourse);
-		//showListCollageStudent(studentCourse);
+		showListCollageStudent(personCourse);
+		showListCollageStudent(studentCourse);
 		showListCollageStudent(collageSturdnet);
 		//showListCollageStudent(workerCourse);
 		
-		//showListWorker(personCourse);
+		showListWorker(personCourse);
 		//showListWorker(studentCourse);
 		//showListWorker(collageSturdnet);
 		showListWorker(workerCourse);
