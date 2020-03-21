@@ -16,30 +16,13 @@ public class AppStart {
 		Arrays.toString(course.getStudents());
 	}
 	public static void main(String[]args) {
-		Course<Person> personCourse =new Course<>("all",10);
-		Course<Student> studentCourse=new Course<> ("student",10);
-		Course<CollageStudent> collageSturdnet =new Course("collageStudent",10);
-		Course<Worker> workerCourse=new Course<>("worker",10);
+		Course<Student> course =new Course<>("student",2);
+		course.add(new Student("abd","math"));
+		course.add(new CollageStudent("abd","math",3));	
+		course.add(new Student("abdd","math"));
+		course.add(new CollageStudent("abdb","math",3));	
+		System.out.println(Arrays.toString(course.getStudents()));
 		
-		showListPerson(personCourse);
-		//showListPerson(studentCourse);
-		//showListPerson(collageSturdnet);
-		//showListPerson(workerCourse);
-		
-		showListStudent(personCourse);
-		showListStudent(studentCourse);
-		//showListStudent(collageSturdnet);
-		//showListStudent(workerCourse);
-		
-		showListCollageStudent(personCourse);
-		showListCollageStudent(studentCourse);
-		showListCollageStudent(collageSturdnet);
-		//showListCollageStudent(workerCourse);
-		
-		showListWorker(personCourse);
-		//showListWorker(studentCourse);
-		//showListWorker(collageSturdnet);
-		showListWorker(workerCourse);
 		
 	}
 } 

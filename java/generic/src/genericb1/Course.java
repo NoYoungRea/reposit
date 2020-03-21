@@ -27,10 +27,29 @@ public class Course <T>{
 		this.students = students;
 	}
 	
-	public void add(T student) {
-		if (count<students.length) {
-			students[count++]=(T)student;
+	public void add(T obj) {
+		try {
+			if(count==students.length) {
+				throw new FullException();
+			}
+			this.students[count++]=obj;
+
 		}
+		catch(CourseException e) {
+			System.out.println(e.getMessage());
+			e.doExcept(this);
+			this.add(obj);
+		}
+
+		
+	}
+
+	public int getCount() {
+		return count;
+	}
+
+	public void setCount(int count) {
+		this.count = count;
 	}
 
 
