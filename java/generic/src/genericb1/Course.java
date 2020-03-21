@@ -6,7 +6,7 @@ public class Course <T extends Student>{
 	private int count;
 	
 	public Course(String courseName, int capacity) {
-		students=(T[])(new Object[capacity]);
+		students=(T[])(new Student[capacity]);
 		this.courseName=courseName;
 		this.count=0;
 	}
