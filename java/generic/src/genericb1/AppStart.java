@@ -1,6 +1,6 @@
 package genericb1;
 
-class Person<T>{
+class Person<T extends Number>{
 	private T value;
 	
 	public Person(T value) {
@@ -13,6 +13,6 @@ class Person<T>{
 
 public class AppStart {
 	public static void main(String[]args) {
-		Person<Number>p=new Person<>(10);
+		Person<String>p=new Person<>("shdudfo")//xxxxxx is can be number Type?;
 	}
 }
