@@ -1,7 +1,7 @@
 package genericb1;
 
-class Person{
-	public<T> void show(T obj) {
+class Person<T>{
+	public void show(T obj) {
 		
 	}
 }
