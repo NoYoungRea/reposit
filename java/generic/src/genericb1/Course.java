@@ -1,6 +1,6 @@
 package genericb1;
 
-public class Course <T extends Person>{
+public class Course <T extends Student>{
 	private String courseName;
 	private T[]students;
 	private int count;
@@ -34,18 +34,8 @@ public class Course <T extends Person>{
 	}
 	public void showLis() {
 		for(T obj:students) {
-			if(obj instanceof CollageStudent) {
-	
-			}
-			else if(obj instanceof Student) {
-				
-			}
-			else if(obj instanceof Worker) {
-				
-			}
-			else if(obj instanceof Person) {	
+			System.out.println(obj.getMajor()+" "+obj.getMajor());
 			
-		}
 			
 		}
 	}
