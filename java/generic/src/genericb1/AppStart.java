@@ -11,4 +11,4 @@ public class AppStart {
 		c.add(new CollageStudent("hgd","math",3));
 		c.showLis();
 	}
-}
+} 
