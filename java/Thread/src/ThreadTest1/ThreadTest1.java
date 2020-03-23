@@ -21,8 +21,8 @@ class Counter implements Runnable{
 }
 public class ThreadTest1 {
 	public static void main(String[]args) {
-		Counter counter=new Counter();
-		Thread t1=new Thread(counter);
+
+		Thread t1=new Thread(new Counter());
 		t1.start();
 		System.out.println("process exit");
 	}
