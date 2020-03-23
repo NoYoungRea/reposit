@@ -22,7 +22,7 @@ class Counter extends Thread{
 public class ThreadTest1 {
 	public static void main(String[]args) {
 		Counter counter=new Counter();
-		counter.run();
+		counter.start();
 		System.out.println("process exit");
 	}
 }
