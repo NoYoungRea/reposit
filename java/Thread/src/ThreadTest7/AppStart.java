@@ -63,8 +63,13 @@ public class AppStart {
 		
 		
 		sender.start();
-		while(sender.getState()!=Thread.State.TERMINATED);
-		receiver.start();
+		try {
+			sender.join();
+			receiver.start();
+		}
+		catch (InterruptedException e) {
+			
+		}
 
 	}
 }
