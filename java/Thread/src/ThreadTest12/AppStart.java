@@ -43,14 +43,20 @@ public class AppStart {
 		ExecutorService executorService=Executors.newFixedThreadPool(2);
 		for (int i=0;i<10;i++) {
 			Future<Box>future=executorService.submit(new MyBoxControll(box),box);
+			Thread t=new Thread(new Runnable() {
+			public void run() {
 			try {
 				Box b=future.get();
 				System.out.println(b.getNumber());
 			}
 			catch(InterruptedException|ExecutionException e) {}
+			}
+		});
+		t.start();
 		}
 		executorService.shutdown();
 		System.out.println("process is exited");
+	
 	}
 }
 
