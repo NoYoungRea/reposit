@@ -16,6 +16,8 @@ public class Mother extends Thread{
 		
 		System.out.println("1000won is deposited by mother");
 		bank.deposit(1000);
-		bank.setIsReady(true);
+		synchronized(bank){
+			bank.notify();
+		}
 	}
 }
