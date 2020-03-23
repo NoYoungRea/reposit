@@ -1,5 +1,5 @@
 package ThreadTest1;
-class Counter extends Thread{
+class Counter implements Runnable{
 	private int count;
 	
 	public Counter() {
@@ -22,7 +22,8 @@ class Counter extends Thread{
 public class ThreadTest1 {
 	public static void main(String[]args) {
 		Counter counter=new Counter();
-		counter.start();
+		Thread t1=new Thread(counter);
+		t1.start();
 		System.out.println("process exit");
 	}
 }
