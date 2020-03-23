@@ -9,5 +9,6 @@ public class Mother extends Thread{
 	public void run() {
 		System.out.println("1000won is deposited by mother");
 		bank.deposit(1000);
+		bank.setIsReady(true);
 	}
 }
