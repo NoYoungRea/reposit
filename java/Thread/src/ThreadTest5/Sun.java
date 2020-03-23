@@ -10,6 +10,10 @@ public class Sun extends Thread{
 		int i=0;
 		while(!bank.GetisReady()) {
 			i++;
+			try {
+				Thread.sleep(50);
+			}
+			catch (InterruptedException e) {}
 			System.out.println("mom is not already");
 			
 		}
