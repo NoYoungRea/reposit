@@ -50,6 +50,7 @@ public class AppStart {
 			catch(InterruptedException|ExecutionException e) {}
 		}
 		executorService.shutdown();
+		System.out.println("process is exited");
 	}
 }
 
