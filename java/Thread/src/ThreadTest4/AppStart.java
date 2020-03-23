@@ -30,6 +30,12 @@ public class AppStart {
 	public static void main(String []args) {
 		Thread t=new Computer();
 		t.start();
+		try {
+			t.join();
+		}
+		catch(InterruptedException e) {
+			
+		}
 		System.out.println("result/"+((Computer)t).getResult());
 	}
 }
