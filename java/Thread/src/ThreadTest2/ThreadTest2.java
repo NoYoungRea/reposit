@@ -11,10 +11,22 @@ class MyThread extends Thread{
 		this.a = a;
 	}
 }
+class Bank{
+	int balance;
+}
+abstract class MyBank extends Bank implements Runnable{
+
+}
 public class ThreadTest2 {
 	public static void main(String[] args) {
 		int a=10;
 
+		Thread t=new Thread(new MyBank() {
+			public void run() {
+				
+			}
+		});
+		
 		Thread t0= new MyThread(100) {
 			public void run() {
 				for(int i=0;i<10;i++) {
