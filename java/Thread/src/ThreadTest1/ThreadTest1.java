@@ -15,15 +15,21 @@ class Counter implements Runnable{
 			Thread.sleep(500);
 			}
 			catch(InterruptedException e) {}
+			System.out.println("Counter value /"+count);
+
 		}
-		System.out.println("Counter value /"+count);
 	}
 }
 public class ThreadTest1 {
 	public static void main(String[]args) {
 
 		Thread t1=new Thread(new Counter());
+		t1.setDaemon(true);
 		t1.start();
+		try {
+			Thread.sleep(2000);
+		}
+		catch (InterruptedException e) {}
 		System.out.println("process exit");
 	}
 }
