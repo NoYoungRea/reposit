@@ -20,6 +20,12 @@ public class MyBoxThread implements Runnable{
 		for (int i=1;i<=10;i++) {
 			sum+=i;
 		}
+		try {
+		Thread.sleep(100);
+		}
+		catch(InterruptedException e) {
+			
+		}
 		box.add(sum);
 	}
 }
