@@ -19,5 +19,6 @@ public class AppStart {
 			Thread t1=new Thread(new MyThread(), i+" Thread");
 			excutorService.submit(t1);
 		}
+		excutorService.shutdown();
 	}
 }
