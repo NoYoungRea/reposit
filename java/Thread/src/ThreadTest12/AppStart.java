@@ -1,7 +1,9 @@
 package ThreadTest12;
 
+import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 
 class Box{
 	int number;
@@ -40,10 +42,14 @@ public class AppStart {
 		Box box=new Box();
 		ExecutorService executorService=Executors.newFixedThreadPool(2);
 		for (int i=0;i<10;i++) {
-			executorService.submit(new MyBoxControll(box));
+			Future<Box>future=executorService.submit(new MyBoxControll(box),box);
+			try {
+				Box b=future.get();
+				System.out.println(b.getNumber());
+			}
+			catch(InterruptedException|ExecutionException e) {}
 		}
 		executorService.shutdown();
-		System.out.println(box.getNumber());
 	}
 }
-//2
+
