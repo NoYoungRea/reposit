@@ -19,7 +19,7 @@ public class Bank {
 	public void deposit(int account) {
 		balance+=account;
 	}
-	public int withdraw(int amount) {
+	public synchronized int withdraw(int amount) {
 		if(amount>balance) {
 			return 0;
 		}

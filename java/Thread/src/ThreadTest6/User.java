@@ -25,11 +25,11 @@ public class User implements Runnable {
 
 			}
 			int money = 1000;
-			synchronized (bank) {
+
 				money = bank.withdraw(1000);
 				System.out.println(name + " is " + money + "/withdraw");
 				System.out.println("balance is " + bank.getBalance());
-			}
+
 		}
 	}
 }
