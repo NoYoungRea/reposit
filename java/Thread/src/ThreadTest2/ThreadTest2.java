@@ -2,6 +2,7 @@ package ThreadTest2;
 
 public class ThreadTest2 {
 	public static void main(String[] args) {
+		int a=10;
 
 		Thread t1 = new Thread("first") {
 			public void run() {
@@ -14,8 +15,12 @@ public class ThreadTest2 {
 
 				}
 			}
+			public int getA() {
+				return a;
+			}
 		};
-		//t1.setName("first");
+		//t1.getA();
+
 
 		Thread t2=new Thread(new Runnable(){
 			public void run() {
