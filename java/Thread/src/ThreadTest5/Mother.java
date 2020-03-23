@@ -7,17 +7,25 @@ public class Mother extends Thread{
 		this.bank=bank;
 	}
 	public void run() {
-		try {
-		Thread.sleep(500);
-		}
-		catch(InterruptedException e) {
-			
-		}
-		
-		System.out.println("1000won is deposited by mother");
-		bank.deposit(1000);
-		synchronized(bank){
-			bank.notify();
+		for(int i=0;i<10;i++) {
+			try {
+				Thread.sleep(500);
+			}
+			catch(InterruptedException e) {
+				
+			}
+			bank.deposit(1000);
+			System.out.println("mother/" + 1000 + "/deposit");
+
+			synchronized(bank) {
+				try {
+					bank.notify();
+					bank.wait();
+				}
+				catch(InterruptedException e) {
+					
+				}
+			}
 		}
 	}
 }
