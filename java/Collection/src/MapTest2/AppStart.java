@@ -12,6 +12,11 @@ public class AppStart {
 		hm.put(new MyKey(2),new MyValue("b"));
 		hm.put(new MyKey(3),new MyValue("c"));
 		hm.put(new MyKey(3),new MyValue("d"));
+		hm.put(new MyKey(4),new MyValue("a"));
+
+		
+		hm.remove(new MyKey(3));
+		
 		
 		Set<Map.Entry<MyKey,MyValue>>entrySet=hm.entrySet();
 		Iterator<Map.Entry<MyKey,MyValue>>it= entrySet.iterator();
