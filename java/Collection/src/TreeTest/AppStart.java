@@ -1,5 +1,7 @@
 package TreeTest;
 
+import java.util.Iterator;
+import java.util.NavigableSet;
 import java.util.TreeSet;
 
 public class AppStart {
@@ -15,5 +17,18 @@ public class AppStart {
 			System.out.println(i);
 			
 		}
+		System.out.println("------------------------------");		
+		NavigableSet<Person> ns=ts.descendingSet();
+		for(Person p:ns) {
+			System.out.println(p);
+			
+		}
+		System.out.println("------------------------------");
+		NavigableSet<Person>ns2=ns.descendingSet();
+		Iterator<Person>it=ts.descendingIterator();
+		while(it.hasNext()) {
+			System.out.println(it.next());
+		}
+		System.out.println("------------------------------");
 	}
 }
