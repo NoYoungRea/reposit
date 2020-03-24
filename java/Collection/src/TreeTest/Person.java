@@ -27,7 +27,7 @@ public class Person implements Comparable<Person>{
 	public String toString() {
 		return name+"/"+sum();
 	}
-	public int sum() {
+	public Integer sum() {
 		return kor+eng+math;
 	}
 }

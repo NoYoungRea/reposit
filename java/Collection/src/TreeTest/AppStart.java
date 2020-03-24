@@ -6,7 +6,7 @@ import java.util.TreeSet;
 
 public class AppStart {
 	public static void main(String[]args) {
-		TreeSet<Person>ts=new TreeSet<>();
+		TreeSet<Person>ts=new TreeSet<>(new PersonComparator());
 		ts.add(new Person("a",90,90,80));
 		ts.add(new Person("b",25,53,67));
 		ts.add(new Person("c",15,78,100));
