@@ -1,10 +1,10 @@
 package ArrayList2;
 
-import java.util.ArrayList;
+import java.util.LinkedList;
 
 public class AppStart {
 	public static void main(String[]args) {
-		ArrayList<Person> persons=new ArrayList<>();
+		LinkedList<Person> persons=new LinkedList<>();
 		persons.add(new Person("hgd"));
 		persons.add(new Person("hsdf"));
 		persons.add(new Person("hff"));
