@@ -13,12 +13,22 @@ public class AppStart {
 		hm.put(3, "dfk");
 		hm.put(3,"aaa");
 		
+
+		
 		Set<Integer>keys=hm.keySet();
 		Iterator<Integer>keyIterator=keys.iterator();
+		Integer key=null;
+		String value=null;
 		while(keyIterator.hasNext()) {
+			
 			int i=keyIterator.next();
-			System.out.println(i);
-			System.out.println(hm.get(i));
+			if(i==2) {
+				key=i;
+				value=hm.get(i);
+			}
+		}
+		if(key!=null) {
+			hm.remove(key,value);
 		}
 		
 		Set<Map.Entry<Integer,String>> entrySet=hm.entrySet();
@@ -35,7 +45,7 @@ public class AppStart {
 		else
 			System.out.println("we didn't have that key");
 		
-		String value=hm.get(4);
+		value=hm.get(4);
 		if(value!=null) {
 			System.out.println(value);
 		}
