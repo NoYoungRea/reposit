@@ -10,6 +10,13 @@ public class AppStart {
 		persons.add(new Person("hff"));
 		persons.add(new Person("hgg"));
 		
+		if(persons.remove(new Person("hgd"))) {
+			System.out.println("suscced");
+		}
+		else
+			System.out.println("false");
+		
+		
 		for(Person p:persons) {
 			System.out.println(p);
 		}
