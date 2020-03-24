@@ -13,8 +13,8 @@ public class AppStart {
 		
 		Iterator<Person> it=persons.descendingIterator();
 		
-		for(int i=0;i<persons.size();i++) {
-			Person rp=persons.remove(i);
+		while(!persons.isEmpty()) {
+			Person rp=persons.remove(0);
 			System.out.println(rp+"/delete");
 		}		
 	}
