@@ -27,4 +27,10 @@ public class MyKey {
 		
 		return true;
 	}
+	public int hashCode() {
+		final int prime=31;
+		int code=1;
+		code=prime*code+this.Key;
+		return code;
+	}
 }
