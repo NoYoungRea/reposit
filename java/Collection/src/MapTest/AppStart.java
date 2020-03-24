@@ -16,11 +16,17 @@ public class AppStart {
 		Set<Integer>keys=hm.keySet();
 		Iterator<Integer>keyIterator=keys.iterator();
 		while(keyIterator.hasNext()) {
-			System.out.println(keyIterator.next());
-			System.out.println(hm.get(keyIterator.next()));
+			int i=keyIterator.next();
+			System.out.println(i);
+			System.out.println(hm.get(i));
 		}
 		
 		Set<Map.Entry<Integer,String>> entrySet=hm.entrySet();
+		Iterator<Map.Entry<Integer,String>> entryIterator=entrySet.iterator();
+		while(entryIterator.hasNext()) {
+			Map.Entry<Integer, String>entry =entryIterator.next();
+			System.out.println(entry.getKey()+"/"+entry.getValue());
+		}
 		
 		
 		if(hm.containsKey(1)) {
