@@ -23,12 +23,7 @@ public class Student implements Runnable{
 		this.next=next;
 	}
 	public void run() {
-		try {
-			this.next.join();
-		}
-		catch(InterruptedException e) {}
-		
-		
+
 		String bread=null;
 		bread=bakery.getBread();
 		if(bread!=null) {
@@ -39,6 +34,13 @@ public class Student implements Runnable{
 		}
 		synchronized(bakery) {
 			bakery.notify();
+		}
+		
+		try {
+			next.start();
+		}
+		catch(NullPointerException e) {
+			System.out.println("last Thread");
 		}
 	}
 }
