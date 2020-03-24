@@ -11,9 +11,10 @@ public class BinaryTree {
 			return;
 		}
 		else {
+			
 			searchNode(node.getLeft());
-			System.out.print(node.getValue()+" ");
 			searchNode(node.getRight());
+			System.out.print(node.getValue()+" ");
 		}
 		
 	}
