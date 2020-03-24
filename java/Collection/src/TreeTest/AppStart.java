@@ -4,14 +4,14 @@ import java.util.TreeSet;
 
 public class AppStart {
 	public static void main(String[]args) {
-		TreeSet<String>ts=new TreeSet<>();
-		ts.add("a");
-		ts.add("b");
-		ts.add("c");
-		ts.add("d");
-		ts.add("e");
+		TreeSet<Person>ts=new TreeSet<>();
+		ts.add(new Person("a"));
+		ts.add(new Person("b"));
+		ts.add(new Person("c"));
+		ts.add(new Person("d"));
+		ts.add(new Person("e"));
 
-		for(String i:ts) {
+		for(Person i:ts) {
 			System.out.println(i);
 			
 		}
