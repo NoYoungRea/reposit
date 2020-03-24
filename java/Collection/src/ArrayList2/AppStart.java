@@ -12,9 +12,10 @@ public class AppStart {
 		persons.add(0,new Person("hgg"));
 		
 		Iterator<Person> it=persons.descendingIterator();
-		while(it.hasNext())
-		{
-			System.out.println(it.next());
-		}
+		
+		for(int i=0;i<persons.size();i++) {
+			Person rp=persons.remove(i);
+			System.out.println(rp+"/delete");
+		}		
 	}
 }
