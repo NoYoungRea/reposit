@@ -8,7 +8,7 @@ public class AppStart {
 		al.add(10);
 		al.add(0,20);
 		al.add(1,30);
-		al.add(0,50.0);
+		al.add(0,(int)50.0);
 		
 		for(int i=0;i<al.size();i++) {
 			Object o=al.get(i);
