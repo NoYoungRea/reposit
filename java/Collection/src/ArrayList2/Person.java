@@ -15,5 +15,7 @@ public class Person {
 	public void setName(String name) {
 		this.name = name;
 	}
-
+	public String toString() {
+		return this.getClass().getName()+"/"+name;
+	}
 }
