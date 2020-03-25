@@ -6,46 +6,41 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.ObjectInputStream;
 
 public class AppStart {
-	public static void main(String[]args) {
-		File f=null;
-		FileInputStream fis=null;
-		DataInputStream dis=null;
-		
+	public static void main(String[] args) {
+		File f = null;
+		FileInputStream fis = null;
+		ObjectInputStream dis = null;
+
 		try {
-			f=new File("c:/tmp/data.txt");
+			f = new File("c:/tmp/data.txt");
 			fis = new FileInputStream(f);
-			dis=new DataInputStream(fis);
-			
-	
-			double d=dis.readDouble();
-			char e=dis.readChar();
+			dis = new ObjectInputStream(fis);
+
+			double d = dis.readDouble();
+			char e = dis.readChar();
+			String f1 = (String) dis.readObject();
 			System.out.println(d);
 			System.out.println(e);
+			System.out.println(f1);
 
-
-		}
-		catch(FileNotFoundException e) {
+		} catch (FileNotFoundException e) {
 			e.printStackTrace();
-		}
-		catch(EOFException e) {
+		} catch (IOException e) {
 			e.printStackTrace();
 
-		}
-		catch(IOException e) {
-			e.printStackTrace();
-
-		}
-		finally {
+		} catch (ClassNotFoundException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		} finally {
 			try {
 				dis.close();
+			} catch (Exception e) {
+
 			}
-			catch(Exception e)
-			{
-				
-			}
-			
+
 		}
 	}
 }
