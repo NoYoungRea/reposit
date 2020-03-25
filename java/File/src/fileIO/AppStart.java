@@ -4,25 +4,18 @@ import java.io.File;
 import java.io.IOException;
 
 public class AppStart {
-	public static void main(String[]args) {
-		File file=null;
-		try {
-			file=new File("C:/tmp/data.txt");
-			file=new File("C:\\tmp","data.txt");
-			file=new File(new File("C:/tmp"),"data.txt");
-			
-			file=File.createTempFile("temp_", ".tmp", new File("C:\\tmp"));
-			System.out.println(file.getAbsolutePath()+"/ we make");	
-			file.deleteOnExit();
-			
+	public static void main(String[] args) {
+		File dir = null;
+
+		dir = new File("C:/tmp/backup");
+		if (!dir.exists()) {
+			dir.mkdir();	
 		}
-		catch(IOException e) {
-			e.printStackTrace();
-		}
+
 		try {
 			Thread.sleep(10000);
+		} catch (InterruptedException e) {
 		}
-		catch(InterruptedException e) {}
 	}
 }
-//C:\tmp\temp_4671520706010542476.tmp/ we make
+//C:\tmp\temp_4671520706010542476.tmp/ we make	
