@@ -7,9 +7,9 @@ public class AppStart {
 	public static void main(String[] args) {
 		File dir = null;
 
-		dir = new File("C:/tmp/backup");
+		dir = new File("C:/tmp/backup/abc");
 		if (!dir.exists()) {
-			dir.mkdir();	
+			dir.mkdirs();	
 		}
 
 		try {
