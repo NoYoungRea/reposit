@@ -12,9 +12,7 @@ public class AppStart {
 		try {
 			fos=new FileOutputStream("c:/tmp/data.txt");
 			dos=new DataOutputStream(fos);
-			fos.write(65);
-			fos.write(66);
-			fos.write(166);
+
 			dos.writeDouble(3.14);
 			dos.writeChar('A');
 			dos.writeChars("shdudfo");
