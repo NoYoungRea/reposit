@@ -11,7 +11,7 @@ public class AppStart {
 		dir=new File("C://Program Files");
 		File[] list = dir.listFiles();
 		for(File f: list) {
-			System.out.println(f);
+			System.out.printf("%10s %s\n",(f.isDirectory()?"Dir":"File"),f.getName());
 		}
 		
 		
