@@ -10,14 +10,11 @@ public class AppStart {
 			file=new File("C:/tmp/data.txt");
 			file=new File("C:\\tmp","data.txt");
 			file=new File(new File("C:/tmp"),"data.txt");
-			if(file.exists()) {
-				System.out.println("file is");
-			}
-			else {
-				System.out.println("file is not");
-				file.createNewFile();
-			}
+			
+			file=File.createTempFile("temp_", ".tmp", new File("C:\\tmp"));
+			System.out.println(file.getAbsolutePath()+"/ we make");	
 			file.deleteOnExit();
+			
 		}
 		catch(IOException e) {
 			e.printStackTrace();
@@ -28,3 +25,4 @@ public class AppStart {
 		catch(InterruptedException e) {}
 	}
 }
+//C:\tmp\temp_4671520706010542476.tmp/ we make
