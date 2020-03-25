@@ -9,7 +9,7 @@ public class BufferOut {
 	public static void main(String[]args) {
 		ObjectOutputStream ois=null;
 		try {
-			ois=new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream("c:/tmp/data.txt"),1024));
+			ois=new ObjectOutputStream(new BufferedOutputStream(System.out,1024));
 			ois.writeInt(10);
 			ois.writeDouble(3.14);
 			ois.writeObject("shdudfo");
