@@ -4,16 +4,28 @@ import java.io.File;
 import java.io.IOException;
 
 public class AppStart {
-	public static void main(String[]args) {
+
+	public static void search(File dir) {
 		
-		File dir=null;
-		
-		dir=new File("C://Program Files");
 		File[] list = dir.listFiles();
-		for(File f: list) {
-			System.out.printf("%10s %10d %s %s\n",(f.isDirectory()?"Dir":"File"),f.length(),f.lastModified(),f.getName());
+		try {
+		for (File f : list) {
+		
+				System.out.printf("%10s %s\n", (f.isDirectory() ? "Dir" : "File"), f.getParent());// f.getParent
+		
+		
+				if (f.isDirectory()&&f.canRead()&&f.canExecute()) {
+				search(f);
+			}
 		}
-		
-		
+		}
+		catch(Exception e) {
+			
+		}
+
+	}
+
+	public static void main(String[] args) {
+		search(new File("C://Program Files"));
 	}
 }
