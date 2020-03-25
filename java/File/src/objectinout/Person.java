@@ -3,6 +3,9 @@ package objectinout;
 import java.io.Serializable;
 
 public class Person implements Serializable{
+	
+	public static final long serialVersionUID=1L;
+	
 	private int age;
 	private String name;
 	public Person(int age, String name) {
