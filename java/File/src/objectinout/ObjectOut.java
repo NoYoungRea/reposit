@@ -15,6 +15,7 @@ public class ObjectOut {
 			oos.writeChar('a');
 			oos.writeDouble(3.14);
 			oos.writeObject("java");
+			oos.writeObject(new Person(20,"hgd"));
 			System.out.println("file exit ok!");
 		}
 		catch(Exception e) {
