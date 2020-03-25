@@ -17,6 +17,7 @@ public class AppStart {
 				System.out.println("file is not");
 				file.createNewFile();
 			}
+			file.delete();
 		}
 		catch(IOException e) {
 			e.printStackTrace();
