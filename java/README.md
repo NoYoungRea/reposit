@@ -7,6 +7,10 @@
 4. Doc에서 final로 된거을 구별하는 법은 다 대문자로 되어 있음
 5. deprccated
 6. 런타임 익셉션은 런타임 강제를 안하기 때문에 doc에서 메소드 throw 옆에 명시되어 있는 것이 아니라 하단 부에 컴파일 익셉션과 종합적으로 나와 있다.
+## Number
+Person<Number>p=new Person<Number>(10); 이건 Integer 반환 number.valueof를 호출함 
+Person<Number>p=new Person<Number>(new Number(10));이건 안됨 이건 넘버 객체 반환
+  
 ## instanceof
 다른 거 볼거 없고 어떤 인스턴스인지 구분하기 위해 다음과 같은 키워드를 쓴다.
 주의 할 것은 다음과 같이 상속관계에 놓이지 않은 서로 다른 클레스의 객체에 대해서 사용할때는 자명하나 예를 들어
@@ -61,6 +65,8 @@ final은 지역변수에도 맴버변수에도 static이든 아니든 public pri
 final class 더 이상 상속할 수 없는 class
 final method 더 이상 오버라이딩 할 수 없는 메소드
 접근제한자가 만약 protected final void show() 이면 자식 인스턴스에서만 접근하여 사용할 수 있다. 
+final 클레스면 final 메소드가 의미가 없다.
+## 인스턴스는 실행타임에 만들어짐,so 만들어지는 인스턴스를 컴파일타임에는 알지 못한다. 
 ## java.lang 자동 임포트
 ## objects 자동 상속. 가장 상위. 그 무엇도 위에 두지 않음
 ## class 클레스
