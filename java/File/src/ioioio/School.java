@@ -76,6 +76,7 @@ public class School {
 				p = it.next();
 				a.writeObject(p);
 			}
+			a.flush();
 		} catch (EOFException e) {
 			System.out.println("done");
 		} catch (Exception e) {
