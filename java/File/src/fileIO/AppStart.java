@@ -17,10 +17,14 @@ public class AppStart {
 				System.out.println("file is not");
 				file.createNewFile();
 			}
-			file.delete();
+			file.deleteOnExit();
 		}
 		catch(IOException e) {
 			e.printStackTrace();
 		}
+		try {
+			Thread.sleep(10000);
+		}
+		catch(InterruptedException e) {}
 	}
 }
