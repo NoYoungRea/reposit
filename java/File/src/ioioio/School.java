@@ -14,9 +14,18 @@ import java.util.Set;
 
 public class School {
 	private HashSet<Person> school;
+	private Accessable accessable;
 
 	public HashSet<Person> getSchool() {
 		return school;
+	}
+
+	public Accessable getAccessable() {
+		return accessable;
+	}
+
+	public void setAccessable(Accessable accessable) {
+		this.accessable = accessable;
 	}
 
 	public void setSchool(Set<Person> school) {
@@ -63,31 +72,9 @@ public class School {
 
 	public void saveFile(String fileName) {
 
-		ObjectOutputStream a = null;
-		FileOutputStream b = null;
-		BufferedOutputStream c = null;
 		try {
-			b = new FileOutputStream(fileName);
-			c = new BufferedOutputStream(b, 1024);
-			a = new ObjectOutputStream(c);
-			Iterator<Person> it = school.iterator();
-			Person p = null;
-			while (it.hasNext()) {
-				p = it.next();
-				a.writeObject(p);
-			}
-			a.flush();
-		} catch (EOFException e) {
-			System.out.println("done");
+			this.accessable.saveSchoolSet(this, fileName);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
-		try {
-			a.close();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
@@ -95,31 +82,12 @@ public class School {
 
 	public void restoreFile(String fileName) {
 
-		ObjectInputStream a = null;
-		FileInputStream b = null;
-		BufferedInputStream c = null;
 		try {
-			b = new FileInputStream(fileName);
-			c = new BufferedInputStream(b, 1024);
-			a = new ObjectInputStream(c);
-
-			while (true) {
-				Person p = (Person) a.readObject();
-				school.add(p);
-
-			}
-		} catch (EOFException e) {
-			System.out.println("done");
+			this.accessable.restoreSchool(this, fileName);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		try {
-			a.close();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+
 	}
 
 	public void showList() {

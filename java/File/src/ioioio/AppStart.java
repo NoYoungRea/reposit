@@ -12,6 +12,8 @@ public class AppStart {
 		
 		school.setSchool(hs);
 		school.showList();
+		school.setAccessable(new Accessablego());
+		
 		school.saveFile("c:/tmp/data.txt");
 		school.clear();
 		school.showList();
