@@ -15,10 +15,15 @@ public class InputFile {
 			char b=oos.readChar();
 			double c=oos.readDouble();
 			String d=(String)oos.readObject();
+			Person f=(Person)oos.readObject();
+
 			System.out.println(i);
 			System.out.println(b);
 			System.out.println(c);
 			System.out.println(d);
+			System.out.println(f.getAge()+"/"+f.getName());
+
+			
 
 			
 		}
