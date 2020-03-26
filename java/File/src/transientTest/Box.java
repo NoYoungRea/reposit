@@ -4,8 +4,8 @@ import java.io.Serializable;
 
 public class Box implements Serializable{
 	private static final long serialVersionUID = -8479505010869961944L;
-	private int width;
-	private int height;
+	private transient int width;
+	private transient int height;
 	public Box(int width, int height) {
 		super();
 		this.width = width;
