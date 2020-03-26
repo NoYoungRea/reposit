@@ -1,5 +1,6 @@
 package ReaderWriter2;
 
+import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -13,12 +14,15 @@ public class AppStart {
 		student.add(new Person("b",40));
 		FileWriter fw = null;
 		PrintWriter out=null;
+		BufferedWriter bw=null;
 		try{
 			fw=new FileWriter("C:/tmp/data.txt");
-			out=new PrintWriter(fw);
+			bw=new BufferedWriter(fw);
+			out=new PrintWriter(bw);
 			for(Person t:student) {
 				out.printf("%s:%d\n", t.getName(),t.getAge());
 			}
+			out.flush();
 		}catch(Exception e) {
 			e.printStackTrace();
 		}finally {
