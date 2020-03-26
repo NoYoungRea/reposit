@@ -7,14 +7,10 @@ public class AppStart {
 	public static void main(String[] args) {
 
 		try {
-			InetAddress ia=InetAddress.getByName("www.google.com");
-			byte[]addr=ia.getAddress();
-			
-			for(int i=0;i<addr.length;i++) {
-				if(i>0)System.out.print(".");
-				System.out.print(Byte.toUnsignedInt(addr[i]));
-			}
-	
+			InetAddress[] ia=InetAddress.getAllByName("www.naver.com");
+			for(InetAddress g:ia)
+				System.out.println(g.getHostAddress());			
+
 		}catch(UnknownHostException e) {
 			
 		}
