@@ -8,7 +8,12 @@ public class AppStart {
 
 		try {
 			InetAddress ia=InetAddress.getByName("www.google.com");
-			System.out.println(ia.getHostAddress());
+			byte[]addr=ia.getAddress();
+			
+			for(int i=0;i<addr.length;i++) {
+				if(i>0)System.out.print(".");
+				System.out.print(Byte.toUnsignedInt(addr[i]));
+			}
 	
 		}catch(UnknownHostException e) {
 			
