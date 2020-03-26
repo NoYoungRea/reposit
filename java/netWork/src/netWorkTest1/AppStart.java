@@ -6,9 +6,14 @@ import java.net.UnknownHostException;
 public class AppStart {
 	public static void main(String[] args) {
 
-		InetAddress ia = InetAddress.getLoopbackAddress();
-		System.out.println(ia.getHostAddress());
-		System.out.println(ia.getHostName());
+		try {
+			InetAddress ia=InetAddress.getByName("www.google.com");
+			System.out.println(ia.getHostAddress());
+	
+		}catch(UnknownHostException e) {
+			
+		}
+
 
 	}
 }
