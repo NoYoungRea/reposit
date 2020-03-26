@@ -23,6 +23,10 @@ public class Server {
 			
 			while(true) {
 				String str=in.readLine();
+				if(str.toUpperCase().equals("BYE")) {
+					System.out.println(cInet.getHostName()+"is gone");
+					break;
+				}
 				System.out.println(str);
 			}
 		}catch(Exception e) {

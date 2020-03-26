@@ -21,7 +21,10 @@ public class Client {
 			while (true) {
 				String str = cin.readLine();
 				out.println(str);
-				out.flush();
+				out.flush();	
+				if(str.toUpperCase().equals("BYE")) {
+					break;
+				}
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
