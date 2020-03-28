@@ -10,7 +10,7 @@ public class AppStart {
 		Runnable runnable =()->{
 			//(¤·)
 		};
-		Printable printable=(name)->{
+		Printable printable=name->{
 			
 		};
 		
