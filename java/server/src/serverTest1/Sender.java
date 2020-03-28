@@ -65,10 +65,10 @@ public class Sender {
 				String code = in.readLine();
 				code = code.substring(0, (code.length() < 10) ? code.length() : 10).toUpperCase();
 				//알맞게 자르는 중
-				code = String.format("%10s", code);
+				code = String.format("%-10s", code);
 				sb.append(code);
 				
-				while (true) {
+				while (true) {	
 					try {
 						System.out.print("제품수량 : ");	// 4자리
 						String unitCount = in.readLine();
@@ -76,7 +76,7 @@ public class Sender {
 						if (count < 1 || count > 9999) {
 							throw new Exception("수량을 잘못 입력하였습니다. 수량은 1 ~ 9999까지 입력할 수 있습니다.");
 						}
-						sb.append(String.format("%4d", count));
+						sb.append(String.format("%-4d", count));
 						//여기서 단순 형식 지정뿐만 아니라 string으로 바꾸어 주는 역활도 동시에 한다.
 						break;
 					}
@@ -96,7 +96,7 @@ public class Sender {
 						if (price < 0 || price > Integer.MAX_VALUE) {
 							throw new Exception("가격을 잘못 입력하였습니다. 가격은 0 ~ " + Integer.MAX_VALUE + "까지 입력이 가능합니다.");
 						}
-						sb.append(String.format("%10d", price));
+						sb.append(String.format("%-10d", price));
 						break;
 					}
 					catch (NumberFormatException e) {
