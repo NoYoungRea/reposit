@@ -1,18 +1,18 @@
 package Test2;
 interface Fightable{
-	void fight();
+	void fight(String weaponName);
 }
 class Knight{
 	void fight(Fightable f) {
-		f.fight();
+		f.fight("swoard");
 	}
 }
 public class AppStart {
 
 	public static void main(String[] args) {
 		Knight k=new Knight();
-		k.fight(()-> {
-			System.out.println("by swoard");
+		k.fight((weapon)-> {
+			System.out.println("by "+weapon);
 		});
 	}
 
