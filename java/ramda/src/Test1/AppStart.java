@@ -15,8 +15,9 @@ public class AppStart {
 		};
 		Printable printable=name->System.out.println("dtd");//when only one line
 		
-		Calculator calculator=(x,y)->return x+y;//(X) if there are a return you should input { }
+		Calculator calculator=(x,y)->x+y;//(X) if there are a return you should input { }
 		
+		System.out.println(calculator.sum(10, 20));
 	}
 	
 
