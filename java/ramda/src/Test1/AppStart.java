@@ -4,10 +4,7 @@ public class AppStart {
 
 	public static void main(String[] args) {
 	
-		Runnable runnable =new Runnable() {
-			public void run() {
-				
-			}
+		Runnable runnable =()->{
 		};
 		
 		
