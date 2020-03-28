@@ -10,9 +10,7 @@ public class AppStart {
 		Runnable runnable =()->{
 			//(¤·)
 		};
-		Printable printable=name->{
-			System.out.println("dtd");
-		};
+		Printable printable=name->System.out.println("dtd");//when only one line
 		
 	}
 	
