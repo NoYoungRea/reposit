@@ -11,7 +11,7 @@ public class AppStart {
 			//(¤·)
 		};
 		Printable printable=name->{
-			
+			System.out.println("dtd");
 		};
 		
 	}
