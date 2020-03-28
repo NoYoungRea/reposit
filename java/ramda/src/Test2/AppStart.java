@@ -3,17 +3,18 @@ interface Fightable{
 	void fight(String weaponName);
 }
 class Knight{
-	void fight(Fightable f) {
-		f.fight("swoard");
+	void fight(Fightable f,String weapon) {
+		f.fight(weapon);
 	}
 }
 public class AppStart {
 
 	public static void main(String[] args) {
 		Knight k=new Knight();
-		k.fight((weapon)-> {
-			System.out.println("by "+weapon);
-		});
+		String weapon="soward";
+		k.fight(weaponname-> {
+			System.out.println("by "+weaponname);
+		},weapon);
 	}
 
 }
