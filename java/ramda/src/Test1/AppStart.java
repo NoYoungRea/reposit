@@ -15,9 +15,7 @@ public class AppStart {
 		};
 		Printable printable=name->System.out.println("dtd");//when only one line
 		
-		Calculator calculator=(x,y)->{
-			return x+y;
-		};
+		Calculator calculator=(x,y)->return x+y;//(X) if there are a return you should input { }
 		
 	}
 	
