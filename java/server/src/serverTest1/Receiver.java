@@ -47,7 +47,11 @@ public class Receiver {
 						in.read(buffer);					
 						StringBuffer strBuffer = new StringBuffer(new String(buffer));
 	
+<<<<<<< HEAD
 						if(strBuffer.indexOf(""+EOT)==0) {
+=======
+						if(strBuffer.indexOf(""+EOT)==0) {//char을 string으로 바꿔주기 위해서
+>>>>>>> 5334b827d51c6f06d33a984fdbcc5866c692d5e9
 							System.out.println(clientSocket.getInetAddress().getHostName()+"/done");
 							break;
 						}
