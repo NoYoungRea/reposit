@@ -20,6 +20,17 @@
 
 결론: ioexception은 비정상 종료를 위해 반드시 필요. 1,3,4는 선택
 
+## input output
+- 4개의 커다란 추상클래스가 있다 .inputStream/outputStream<->reader/writer
+- 주로 데이터를 쓰고 읽는 sinkstream이 있고 처리 역활을 하는 processing stream이 있다.(버퍼, 브릿지, 출력포맷지등)
+- System.out의 형이 printStream, System.in의 형이 inputStream 형이다. 구현체는 뭔지 잘 모르겠지만, 콘솔을 매체로 한 객체일 것이다.
+printStream은 그런 객체를 한번 더 감싼 꼴이다. 방금 콘솔에 System.out.write를 이용하여 데이터를 출력해 봤는데 바이트 단위로 괴상하게 출력되는 것을 볼 수 있었다. System.out.print시리즈 들을 이용하면 인수로 주는 데이터 형을 잘 묶어주어 출력할 것이다.
+- reader와 writer의 경우 조금 어려운데. 이것의 구현클레스들은 여러개가 있지만 sink 역활을 하는 stream은 딱 두개다 바로 filewriter와 filereader다 근데 두개 모두 inputStreamReader OutputSreamWriter 즉 브릿지 클레스를 상속받고 있다. 이 데이터 싱크 stream들은 바로 매체에 접근하는 것이 아니라 super의 생성자를 통해 바이트단위로 읽고 쓸 수 있는 sink를 하나 만들어서 그것을 받아 처리한 데이터를 가지고 놀게 된다.
+- inputStream/reader  -> inputStream을 reader로 변환해주는 역활을 한다.
+- OutputSream/Writer -> writer로 받은 것을 outputStram으로변환해주는 역활을 한다.
+- 아무리 문자단위로 입출력을 하더라도 실제 파일에 기록을 할때는 바이트 단위로 기록을 해야한다.
+- Writer하위에 구현되어 있는 클레스 중에 싱크 클레스 말고 printWriter클레스가 있는데 이게 생성자에서 인수로 outputstream 타입을 받는 것도 있다. 여기 이렇게 설명 되어 있다.This convenience constructor creates the necessary intermediate OutputStreamWriter, which will convert characters into bytes using the default character encoding.
+
 ## Number
 Person<Number>p=new Person<Number>(10); 이건 Integer 반환 number.valueof를 호출함 
 Person<Number>p=new Person<Number>(new Number(10));이건 안됨 이건 넘버 객체 반환
