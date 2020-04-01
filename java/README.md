@@ -7,6 +7,19 @@
 4. Doc에서 final로 된거을 구별하는 법은 다 대문자로 되어 있음
 5. deprccated
 6. 런타임 익셉션은 런타임 강제를 안하기 때문에 doc에서 메소드 throw 옆에 명시되어 있는 것이 아니라 하단 부에 컴파일 익셉션과 종합적으로 나와 있다.
+
+## multichat
+조심해야 하는 것이 close socket하면  이 command를 친 쪽에서 in out stream이 닫히는 것이다.
+즉 반대편에서는 leadline으로 데이터를 가져와도 참조를 못하는 것이 아니라 상대방 output이 닫혔으므로 null을 반환 하는 것이다. close soket을 친 쪽에서는 상황이 다르다. input output이 닫혔기 때문에 관련 stream을 참조하면 바로 ioexception이 떠버린다. 
+또 만약 상대방 cmd를 강제 종료할 경우(즉, close socket으로 stream을 닫지 않은 경우) 이쪽에서도 stream을 참조하면 ioexception 이 떠버린다.
+반복문을 떠나기 위한 것이
+1. 상대방쪽에서 문을 닫아서 null이 반환되는 것을 검사할 것인지
+2. 내것을 닫았기 때문에 내것을 참조하면 뜨는 예외를(주로 자신의 것에서 여러 쓰레드를 닫을때)이용할 것인지 (그런데 상대방 것이 
+3. 아니면 그냥 interrupt를 이용하던지
+4. 아니면 message를 사용할 것인지
+
+결론: ioexception은 비정상 종료를 위해 반드시 필요. 1,3,4는 선택
+
 ## Number
 Person<Number>p=new Person<Number>(10); 이건 Integer 반환 number.valueof를 호출함 
 Person<Number>p=new Person<Number>(new Number(10));이건 안됨 이건 넘버 객체 반환
