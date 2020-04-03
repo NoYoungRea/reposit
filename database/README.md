@@ -94,18 +94,17 @@ comics 은 카테고리와 퍼블리셔 가 부모임 일대 다의 관계 두�
 - transection 일련의 연속된 잡업처리를 컨트롤 할 수 있는 것. 우리가 지금 설정자체가 명령 할때마다 테이블에 반영이 됨.(auto commit) auto commit 을 해제하면 log를 남기는 영역(innob를 사용하는 한)에 시작점으로 돌아갈 위치를 표기해 놓게 된다. 명령을 할때 마다 log에 계속 쌓이게 되고(실제 테이블에 적용 되는 것이 아니라) commit을 하면 begin으로 부터 지금까지 쌓인 것을 실제 적용하고 rollback은 begin(on->off,rolllback, commit)으로 돌아가게 된다. on 일때 또한 log가 있지만 그것은 바로바로 명령이 들어오는대로 적용시킨다. 시작점이 없다.
 - 한 사람이 트렌젝션을 했다해서 다 적용 되는 것이 아님. 기본은 자동으로 적용이 되게 끔 되어 있음 한사람이 오토를 끄면 그 기능만 꺼지는거 다른 사람은 오토 커밋이 유지가 
 ## sql 구문
-DDL (Data Definition Language) 는 데이터 베이스 스키마를 정의 하거나 조작하기 위해 사용한다. SCHEMA, DOMAIN, TABLE, VIEW, INDEX 를 다음 명령어로 정의, 변경, 삭제한다.
-⒜ CREATE : 정의 
-⒝ ALTER: 수정
-⒞ DROP : 삭제
-⒟ TRUNCATE : DROP 후 CREATE
-* Oracle 11g 이전 버전과 MySQL은 DDL에 대해서 트랜잭션을 지원하지 않는다.
+- DDL (Data Definition Language) 는 데이터 베이스 스키마를 정의 하거나 조작하기 위해 사용한다. SCHEMA, DOMAIN, TABLE, VIEW, INDEX 를 다음 명령어로 정의, 변경, 삭제한다.
+1. CREATE : 정의 
+2. ALTER: 수정
+3. DROP : 삭제
+4. TRUNCATE : DROP 후 CREATE
+5. Oracle 11g 이전 버전과 MySQL은 DDL에 대해서 트랜잭션을 지원하지 않는다.
 (Rollback 할 수 없고 Commit할 필요도 없다.)
 
-DML (Data Manipulation Language) 는 데이터를 조작 (조회, 추가, 변경, 삭제) 하기 위해 사용한다. 사용자가 응용 프로그램과 데이터 베이스 사이에 실질적인 데이터 처리를 위해서 주로 사용한다.
-⒜ SELECT : 조회
-⒝ INSERT : 추가
-⒞ DELETE : 삭제
-⒟ UPDATE : 변경
-기본적인 위의 명령어 외에 LOCK, EXPLAIN, CALL 등도 DML에 포함 된다.
-이건 transaction 잘된다.
+- DML (Data Manipulation Language) 는 데이터를 조작 (조회, 추가, 변경, 삭제) 하기 위해 사용한다. 사용자가 응용 프로그램과 데이터 베이스 사이에 실질적인 데이터 처리를 위해서 주로 사용한다.
+1. SELECT : 조회
+2. INSERT : 추가
+3. DELETE : 삭제
+4. UPDATE : 변경
+5. 기본적인 위의 명령어 외에 LOCK, EXPLAIN, CALL 등도 DML에 포함 된다. 이건 transaction 잘된다.
