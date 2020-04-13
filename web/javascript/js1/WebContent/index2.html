@@ -17,6 +17,12 @@ var funcA=function(a,b){//익명 함수를 가리키는 함수 변수
 alert(funcA(10,20));
 
 
+function out(a,f){
+	return f(a)
+}
+out(10,function(a){
+	alert(a);
+});
 </script>
 </head>
 <body>
