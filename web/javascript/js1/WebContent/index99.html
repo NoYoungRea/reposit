@@ -7,15 +7,18 @@
 	function start(){
 
 		document.getElementById('btnCheck').onclick=function(){
-			alert('dkfjkdfj');
-		}//문제는 문서가 다 다운 받고 실행 되어져야 함
-
+			alert(document.getElementById('phone').value.checkPhoneNumber())
+		}
+	}
+	String.prototype.checkPhoneNumber=function(){
+		var pattern =/^0[0-9]{1,2}-[0-9]{4}-[0-9]{4}$/;
+		return pattern.test(this);
 	}
 </script>
 </head>
-<body onLoad="start()">
+<body onLoad="start()"><!-- so 여기다 이거 쓴거 -->
 
 <input type="text" name="phone" id="phone">
-<button id="btnCheck" type="buton">유효성 검사</button>
+<button id="btnCheck" type="button">유효성 검사</button>
 </body>
 </html>
