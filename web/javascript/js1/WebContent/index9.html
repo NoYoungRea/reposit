@@ -4,10 +4,14 @@
 <meta charset="EUC-KR">	
 <title>Insert title here</title>
 <script>
-setTimeout(function(){
+var id=setTimeout(function(){
 	alert("예약작업을 수행합니다.");
 },1000);
 alert('인생은 혼자이다.');
+setTimeout(function(){
+	clearTime(id);
+	alert('예약잡업을 취소하였습니다.');
+},1000);
 </script>
 </head>
 <body>
