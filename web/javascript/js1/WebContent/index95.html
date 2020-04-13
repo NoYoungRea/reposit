@@ -9,18 +9,22 @@ function Person(a,b,c,d){
 	this.kor=b;
 	this.eng=c;
 	this.math=d;
-	this.toString=function(){
-		document.write(this.name);
-		document.write(this.kor);
-		document.write(this.eng);
-		document.write(this.math);
-
-	}//ÀÌ·¸°Ô ÇÏ¸é »ı¼ºµÈ °´Ã¼ ³»ºÎ¿¡µµ toString À» ´Ù °¡Áö°í ÀÖ´Ù. ÇÔ¼ö ¾È¿¡¼­ Á¤ÀÇÇß±â¿¡ ¹ß»ıÇÑ´Ù.
 }
+Person.prototype.toString=function(){
+	document.write(this.name);
+	document.write(this.kor);
+	document.write(this.eng);
+	document.write(this.math);	
+}
+
+Person.prototype.name="ssssss";
+//í”„ë¡œí† íƒ€ì…ì˜ ê°’
 var p=new Person("hgd",90,10,20);
 p.toString()
-
+//ì˜¤ë²„ë¼ì´ë”©ëœ toStringì´ ë¬ìœ¼ë¯€ë¡œ í”„ë¡œí† íƒ€ì…ì˜ í•¨ìˆ˜ê°€ í˜¸ì¶œë¨.
 var s=new Person("ss",34,5,3);
+delete s.name;
+//ì˜¤ë²„ë¼ì´ë”© ëœ nameì´ ì—†ìœ¼ë¯€ë¡œ ì›í˜•ì˜ ê°’ì„ ì°¸ì¡°
 s.toString()
 </script>
 </head>
