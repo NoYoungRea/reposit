@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">	
+<title>Insert title here</title>
+<script>
+var obj={
+	name:'shdudfo',
+	version:0,
+	info:function(){
+		alert(this.name);//this반드시 있어야 한다.
+	}
+}
+document.write(obj.name+'<br/>');
+document.write(obj['version']+'<br/>');
+obj.info();
+
+with(obj){
+	document.write(name+'<br/>');//전역변수에 name이 있으면 충돌이 발생
+	document.write(version+'<br/>');
+	info()	
+}
+</script>
+</head>
+<body>
+
+</body>
+</html>

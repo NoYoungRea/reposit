@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">	
+<title>Insert title here</title>
+<script>
+var calc=function(){
+	let str=document.getElementById('exp').value;
+	document.getElementById('result').value=eval(str);
+	//eval 주어진 연산 문자들을 그대로 수행
+}
+</script>
+</head>
+<body>
+수식:<input type="text" id="exp" style="width: 100px">
+<button type="button" onClick="calc">수행</button>
+결과 :<input type="text" id="result" style="width:100px">
+</body>
+</html>
