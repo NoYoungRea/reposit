@@ -4,17 +4,25 @@
 <meta charset="EUC-KR">	
 <title>Insert title here</title>
 <script>
-var id=setTimeout(function(){
-	alert("예약작업을 수행합니다.");
-},1000);
-alert('인생은 혼자이다.');
-setTimeout(function(){
-	clearTime(id);
-	alert('예약잡업을 취소하였습니다.');
-},1000);
+var clockID=null;
+function start(){
+	clockID=setInterval(function(){
+		var today=new Date();
+		var clockStr=today.getYear()+1900+'-';
+		clockStr+=today.getMonth()+1+'-';
+		clockStr+=today.getDate()+''
+		clockStr+=today.getHours()+':'
+		clockStr+=today.getMinutes()+':'
+		clockStr+=today.getSeconds();
+		document.getElementById('clock').value=clockStr;
+	
+	},1000);
+}
+start();
+
 </script>
 </head>
 <body>
-
+<input id="clock" type="text" style="width:200px">
 </body>
 </html>
