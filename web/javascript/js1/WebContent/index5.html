@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script>
+function getFunc(){
+	let sum=0;
+	//sum 값을 사용합니다.
+	return function(){
+		return sum
+	}
+}
+
+var f=getFunc();
+
+//이렇게 하면 어디서 f가 호출 될지 모르기 때문에 geffunc는 소멸하지 않는다.
+</script>
+</head>
+<body>
+
+</body>
+</html>
