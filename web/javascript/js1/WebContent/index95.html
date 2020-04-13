@@ -9,13 +9,16 @@ function Person(a,b,c,d){
 	this.kor=b;
 	this.eng=c;
 	this.math=d;
+	this.toString=function(){
+		document.write(this.name);
+		document.write(this.kor);
+		document.write(this.eng);
+		document.write(this.math);
+
+	}
 }
 var p=new Person("hgd",90,10,20);
-document.write(p.name);
-document.write(p.kor);
-document.write(p.eng);
-document.write(p.math);
-
+p.toString()
 </script>
 </head>
 <body>
