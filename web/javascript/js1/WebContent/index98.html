@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">	
+<title>Insert title here</title>
+<script>
+var array=['2.jpg','3.jpg','4.jpg','5.jpg']
+var cnt=0;
+	function func(obj){
+		cnt++;
+		cnt=cnt%4
+		document.getElementById("preview").src=array[cnt];
+	}
+	function start(){
+		setInterval(func,1000)
+	}
+
+</script>
+</head>
+<body onLoad="start()">
+<img src="2.jpg" id="preview">
+</body>
+</html>
