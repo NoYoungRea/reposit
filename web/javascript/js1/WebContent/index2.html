@@ -4,6 +4,11 @@
 <meta charset="EUC-KR">
 <title>Insert title here</title>
 <script>
+
+func('인수전달');
+funcA();
+//이렇게 호출부를 정의부 위로 올리면, 선언적 함수 선언은 먼저 선언부들을 한번 읽어들이기 때문에
+//ㄱㅊ but 저 익명은 안 됨.
 function func(str){//이름있는 함수
 	alert(str);
 }
@@ -11,8 +16,6 @@ var funcA=function(){//익명 함수를 가리키는 함수 변수
 	alert('funcA()함수 호출');
 }
 
-func('인수전달');
-funcA();
 </script>
 </head>
 <body>
