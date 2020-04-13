@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">	
+<title>Insert title here</title>
+<script>
+var cnt=0;
+
+function func(){
+	cnt++;
+	return function(){
+		return cnt;
+	}
+}
+var f=func();
+var f1=func();
+alert(f());
+//클로져
+</script>
+</head>
+<body>
+
+</body>
+</html>
