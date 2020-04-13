@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">	
+<title>Insert title here</title>
+<script>
+
+	function func(obj){
+		document.getElementById("preview").src=obj.src;
+	}
+</script>
+</head>
+<body>
+<table>
+	<tr>
+	<td colspan="5"><img id="preview" src="2.jpg" style="width: 450px;"> </td>
+	</tr>
+	<tr>
+	<td ><img src="2.jpg" style="width: 90px;" onMouseover="func(this)"> </td>
+	<td ><img src="3.jpg" style="width: 90px;" onMouseover="func(this)"> </td>
+	<td ><img src="4.jpg" style="width: 90px;" onMouseover="func(this)"> </td>
+	<td ><img src="5.jpg" style="width: 90px;" onMouseover="func(this)"> </td>
+	
+	</tr>
+
+</table>
+</body>
+</html>
