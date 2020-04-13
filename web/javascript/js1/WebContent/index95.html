@@ -15,10 +15,13 @@ function Person(a,b,c,d){
 		document.write(this.eng);
 		document.write(this.math);
 
-	}
+	}//이렇게 하면 생성된 객체 내부에도 toString 을 다 가지고 있다. 함수 안에서 정의했기에 발생한다.
 }
 var p=new Person("hgd",90,10,20);
 p.toString()
+
+var s=new Person("ss",34,5,3);
+s.toString()
 </script>
 </head>
 <body>
