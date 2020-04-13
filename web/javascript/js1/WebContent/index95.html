@@ -4,13 +4,13 @@
 <meta charset="EUC-KR">	
 <title>Insert title here</title>
 <script>
-function Person(){
-	this.name='hgd';
-	this.kor=90;
-	this.eng=100;
-	this.math=90;
+function Person(a,b,c,d){
+	this.name=a;
+	this.kor=b;
+	this.eng=c;
+	this.math=d;
 }
-var p=new Person();
+var p=new Person("hgd",90,10,20);
 document.write(p.name);
 document.write(p.kor);
 document.write(p.eng);
