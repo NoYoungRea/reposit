@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+
+<style>
+#clock{
+width:120px;
+text-align:center;
+padding:10px;
+font-size:20pt;
+font-weight:bold;
+border:2px solid #000000;
+border-radius:10px;
+}
+</style>
+
+<script>
+function preLoad(){
+	let cObj=document.getElementById('clock');
+	//cObj.innerHTML="shdudfo"
+	setInterval(function(){
+		var date=new Date();
+		hour=date.getHours()+":";
+		hour+=date.getMinutes()+":";
+		hour+=date.getSeconds();
+		cObj.innerHTML=hour;
+	},100)
+}
+</script>
+
+</head>
+<body  onLoad="preLoad()">
+<div id="clock">00:00:00</div>
+</body>
+</html>
