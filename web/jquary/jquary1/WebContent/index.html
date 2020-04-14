@@ -7,13 +7,14 @@
 <script>
 //jQuery(documnet)->$(document)
 $(document).ready(function (){
-	$('.first').text('abc');
+	$('div').text('abc');//바깥의 div에 적용되는 순간 안의 div는 사라짐
 })
 //start if documnet is ready
 </script>
 </head>
 <body>
-<div class="first"></div>
-<div></div>
+<div>
+	<div></div>
+</div>
 </body>
 </html>
