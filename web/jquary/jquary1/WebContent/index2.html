@@ -10,11 +10,11 @@
 <script>
 $(document).ready(function (){
 	let ul=$('<ul>');
-	$('<li>',{text:'java'}).appendTo(ul);
-	$('<li>',{text:'database'}).prependTo(ul);
-	$('<li>',{text:'jquery'}).appendTo(ul);
-	$('<li>',{text:'skdjkfjdkf'}).insertAfter(ul.find('li:first-child'));
-	
+	$('<li>',{id : 'java',text:'java'}).appendTo(ul);
+	$('<li>',{id:'dbase', text:'database'}).prependTo(ul);
+	$('<li>',{id: 'jquery', text:'jquery'}).appendTo(ul);
+	$('<li>',{id: 'html',text:'skdjkfjdkf'}).
+	insertAfter(ul.find('li#dbase'));
 	
 	$('body').append(ul);
 	
