@@ -17,9 +17,7 @@ $(document).ready(function (){
 	$('ul>li:first-child').after($('<li>',{id: 'jquery', text:'jquery'}));
 	$('ul>li:nth-child(2)').before($('<li>',{id: 'html',text:'skdjkfjdkf'}))
 	//형제 노드가 대상	
-	
-	ul.empty();
-	//싹 비우기
+	$('ul>li:first-child').remove();
 
 })
 </script>
