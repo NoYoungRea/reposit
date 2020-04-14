@@ -14,11 +14,17 @@ window.onload=function(){
 			document.getElementById('preview').src=this.id;
 		}//this 가 뭐가 들어오는직 생각해보기
 	}
+	document.getElementById('number').onkeydown=function(){
+		alert(arguments[0].keyCode);
+	}
 }
 </script>
 
 </head>
 <body >
+<div>
+	<input type="text" id="number">
+</div>
 <div>
 <button type="button" id="1.jpg">이미지#1</button>
 <button type="button" id="2.jpg">이미지#2</button>
