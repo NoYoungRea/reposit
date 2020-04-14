@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="js/jquery-3.5.0.min.js"></script>
+<script>
+var menus=[
+	['자바','c', 'c++'],
+	['mariadb','mysql','oracle'	],
+	['html','css','subquary']
+	
+	
+]
+$(document).ready(function(){
+	
+	
+	$('#lpart').on('change',function(){
+		($('#spart')).empty().append('<option>소분류 선택</option>')
+		var idx=$(this).find('option:selected').index();
+		if(idx==0)
+			return;
+	
+		for(var i=0;i<menus[idx-1].length;i++){
+			$('<option>',{text:menus[idx-1][i]}).appendTo($('#spart'));
+
+		}
+	})
+})
+
+</script>
+
+</head>
+<body>
+대분류<select id="lpart">
+	<option>대분류선택</option>
+	<option>프로그래밍</option>
+	<option>데이터베이스</option>
+	<option>웹 기술</option>
+	
+</select>
+소분류<select id="spart"></select>
+</body>
+</html>
