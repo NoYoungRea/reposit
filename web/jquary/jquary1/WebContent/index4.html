@@ -10,7 +10,7 @@ $(document).ready(function(){
 	img.attr('src','1.jpg')
 		.attr('style', 'width:100px;border:	2px solid blue')
 	img.appendTo($('body'));
-	img.attr('src','2.jpg').clone().appendTo($('body'))
+	img.clone().attr('src','2.jpg').appendTo($('body'))
 	img.clone().appendTo($('body'))
 	img.clone().appendTo($('body'))
 //그냥은 안 됨 복제를 해야 추가할 수 있다.
