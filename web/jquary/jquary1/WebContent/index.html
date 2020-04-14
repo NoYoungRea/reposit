@@ -10,7 +10,7 @@
 <script>
 //jQuery(documnet)->$(document)
 $(document).ready(function (){
-	console.log($('input:radio:checked').val());
+	console.log($('input[name=database]:radio:checked').val());
 	
 	//제일 첫번째 만나는 checked를 가져옴
 })
@@ -26,7 +26,7 @@ $(document).ready(function (){
 
 <fieldset>
 <legend>jquary 사용가능</legend>
-<input type="radio" name="java" value="true" checked>예
+<input type="radio" name="java" value="true">예
 <input type="radio" name="database" value="true" checked>아니오
 </fieldset>
 
