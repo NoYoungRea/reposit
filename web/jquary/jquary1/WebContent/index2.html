@@ -9,14 +9,14 @@
 </style>
 <script>
 $(document).ready(function (){
-	let ul=$('<ul>');
-	$('<li>',{id : 'java',text:'java'}).appendTo(ul);
-	$('<li>',{id:'dbase', text:'database'}).prependTo(ul);
-	$('<li>',{id: 'jquery', text:'jquery'}).appendTo(ul);
-	$('<li>',{id: 'html',text:'skdjkfjdkf'}).
-	insertAfter(ul.find('li#dbase'));
-	
+	var ul=$('<ul>',{id: 'firstul'}	);
 	$('body').append(ul);
+	ul.append($('<li>',{id : 'java',text:'java'}))
+	ul.prepend($('<li>',{id:'dbase', text:'database'}))
+	//부모 노드가 대상
+	$('ul>li:first-child').after($('<li>',{id: 'jquery', text:'jquery'}));
+	$('ul>li:nth-child(2)').before($('<li>',{id: 'html',text:'skdjkfjdkf'}))
+	//형제 노드가 대상
 	
 })
 </script>
