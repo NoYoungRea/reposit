@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script src="js/jquery-3.5.0.min.js"></script>
+<style >
+	img{width:300px;height:200px;}
+</style>
+<script>
+
+var students=[
+		{name:'a',id:'a1'},
+		{name: 'b',id:'b1'},
+		{name:'c',id:'c1'},
+		{name: 'd',id:'d1'},
+		{name:'e',id:'e1'},
+		{name: 'f',id:'f1'},
+
+]
+$(document).ready(function(){
+	var selObj=$('<select>').appendTo($('body'));
+	for(let i=0;i<students.length;i++){
+		$('<option>',{value:students[i].id,text: students[i].name}).appendTo(selObj);
+	}
+})
+
+</script>
+</head>
+<body>
+</body>
+</html>
