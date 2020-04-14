@@ -11,8 +11,8 @@ window.onload=function(){
 	console.log(buttons)
 	for(let i=0;i<buttons.length;i++){
 		buttons[i].onclick=function(){
-			console.log(arguments);	
-		}//첫번째 인수로 이벤트 객체가 들어온다. 확인 가능
+			document.getElementById('preview').src=this.id;
+		}//this 가 뭐가 들어오는직 생각해보기
 	}
 }
 </script>
@@ -20,11 +20,11 @@ window.onload=function(){
 </head>
 <body >
 <div>
-<button type="button">이미지#1</button>
-<button type="button">이미지#2</button>
-<button type="button">이미지#3</button>
-<button type="button">이미지#4</button>
-<button type="button">이미지#5</button>
+<button type="button" id="1.jpg">이미지#1</button>
+<button type="button" id="2.jpg">이미지#2</button>
+<button type="button" id="3.jpg">이미지#3</button>
+<button type="button" id="4.jpg">이미지#4</button>
+<button type="button" id="5.jpg">이미지#5</button>
 </div>
 
 <div>
