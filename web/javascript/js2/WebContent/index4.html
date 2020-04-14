@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script>
+var student={
+		name:'hgd',
+		age:20,
+		isHungry: false,
+		family: ['아빠','엄마','나'],
+		mom : {
+			name:'나엄마',
+			age:40,
+		}
+}
+var jsonStudent=JSON.stringify(student);
+var jStudent= JSON.parse(jsonStudent);
+
+function preLoad(){
+	console.log(student);
+	console.log(jsonStudent);
+	document.write(jsonStudent)
+	console.log(jStudent)
+	
+	console.log(eval('('+jsonStudent+')'))
+}
+</script>
+
+</head>
+<body onLoad="preLoad()">
+
+</body>
+</html>
