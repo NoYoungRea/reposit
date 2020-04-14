@@ -9,11 +9,12 @@
 </style>
 <script>
 $(document).ready(function (){
-	let ul=$('<ul>').appendTo($('body'))
+	let ul=$('<ul>');
 	$('<li>',{text:'java'}).appendTo(ul);
 	$('<li>',{text:'database'}).prependTo(ul);
 	$('<li>',{text:'jquery'}).appendTo(ul);
 	
+	$('body').append(ul);
 	
 })
 </script>
