@@ -7,9 +7,10 @@
 <script>
 var img=$('<img>')
 $(document).ready(function(){
-	img.attr('src','1.jpg');
-	img.attr('width','100px');
-	img.attr('height','100px');
+	img.attr('src','1.jpg')
+	.css('width','100px')
+	.css('border','2px solid blue')
+	
 	img.appendTo($('body'));
 })
 </script>
