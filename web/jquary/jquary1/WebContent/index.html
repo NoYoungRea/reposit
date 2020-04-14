@@ -10,18 +10,23 @@
 <script>
 //jQuery(documnet)->$(document)
 $(document).ready(function (){
-	$('img[src="2.jpg"]').attr('src','1.jpg') 
+	console.log($('input:radio:checked').val());
 })
 //start if documnet is ready
 </script>
 </head>
 <body>
+<fieldset>
+<legend> jQuary사용</legend>
+<input type="radio" name="ready" value="true">준비됨
+<input type="radio" name="ready" value="false" checked>준비안됨
+</fieldset>
 
-<img name="1" src="1.jpg">
-<img name="2" src="2.jpg">
-<img name="3" src="3.jpg">
-<img name="4" src="4.jpg">
-<img name="5" src="5.jpg">
+<fieldset>
+<legend>jquary 사용가능</legend>
+<input type="checkbox" name="java" value="true">예
+<input type="checkbox" name="database" value="true">아니오
+</fieldset>
 
 </body>
 </html>
