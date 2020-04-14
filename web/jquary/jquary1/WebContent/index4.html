@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="js/jquery-3.5.0.min.js"></script>
+<script>
+var img=$('<img>')
+$(document).ready(function(){
+	//기존에 존재하는 속성에 대한
+	img.attr('src');//src 속성값을 참조한다.
+	img.attr('src','value')//src속성값을 value로 해라
+	//기존에 존재하지 않는 속성을 생성하고자 할때
+	img.setAttr('src','value');//속성을 추가한다. attr로 수행가능하다.
+	img.removeAttr('src');//속성을 제거한다.
+	img.appendTo($('body'));
+})
+</script>
+
+</head>
+<body>
+</body>
+</html>
