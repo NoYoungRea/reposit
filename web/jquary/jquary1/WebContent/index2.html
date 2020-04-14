@@ -9,11 +9,12 @@
 </style>
 <script>
 $(document).ready(function (){
-	$('img#preview').slideUp(2000,null);
+	$('<div>여기에 내용을..</div>').appendTo($('body'));
+	//div태그를 객체로 만든다.
+	$('<div>',{text:'여기에 내용을 ...',id : 'attachedId'}).appendTo($('body'))
 })
 </script>
 </head>
 <body>
-<img src="1.jpg" id="preview">
 </body>
 </html>
