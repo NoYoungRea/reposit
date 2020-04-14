@@ -14,8 +14,11 @@ window.onload=function(){
 			document.getElementById('preview').src=this.id;
 		}//this 가 뭐가 들어오는직 생각해보기
 	}
-	document.getElementById('number').onkeydown=function(){
-		alert(arguments[0].keyCode);
+	document.getElementById('number').onkeydown=function(e){
+		if(e.keyCode<'0'||e.keyCode>'9'){
+			return;
+			
+		}
 	}
 }
 </script>
