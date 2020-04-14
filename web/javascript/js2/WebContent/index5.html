@@ -17,9 +17,22 @@ window.onload=function(){
 	document.getElementById('number').onkeydown=function(e){
 		if(e.keyCode<'0'||e.keyCode>'9'){
 			return;
-			
 		}
 	}
+	document.getElementById('number').onKeyup=function(e){
+		console.log(e);
+		if(e.keyCode==13){
+			document.getElementById('password').focus();
+		}
+	}
+	document.getElementById('number').onblur=function(){
+		if(this.value.trim()){
+			this.focus();
+		}
+	}
+	setTimeout(function(){
+		buttons[3].onclick();
+	},3000);//강제적으로 이벤트 발생
 }
 </script>
 
@@ -27,6 +40,8 @@ window.onload=function(){
 <body >
 <div>
 	<input type="text" id="number">
+	<input type="text" id="password">
+	
 </div>
 <div>
 <button type="button" id="1.jpg">이미지#1</button>
