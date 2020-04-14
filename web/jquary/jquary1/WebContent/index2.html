@@ -9,9 +9,12 @@
 </style>
 <script>
 $(document).ready(function (){
-	$('<div>여기에 내용을..</div>').appendTo($('body'));
-	//div태그를 객체로 만든다.
-	$('<div>',{text:'여기에 내용을 ...',id : 'attachedId'}).appendTo($('body'))
+	let ul=$('<ul>').appendTo($('body'))
+	$('<li>',{text:'java'}).appendTo(ul);
+	$('<li>',{text:'database'}).prependTo(ul);
+	$('<li>',{text:'jquery'}).appendTo(ul);
+	
+	
 })
 </script>
 </head>
