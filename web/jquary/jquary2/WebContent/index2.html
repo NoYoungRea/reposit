@@ -17,15 +17,19 @@ div{width:500px;margin:0 auto;text-align:center;}
 <script src="js/jquery-3.5.0.min.js"></script>
 <script>
 $(document).ready(function(){
-	$('button').eq(0).click(function(){
-		$('li').first().appendTo($('ul'));
-	})
-	$('button').eq(1).click(function(){
-		$('li').last().prependTo($('ul'));
-	})
 	
+	$('button').click(function(){
+		if($(this).text().equals('prev')){
+			$('li:last-child').prependTo($('ul'));
+		}
+		else
+			$('li:first-child').appendTo($('ul'));
 	
+	})
 })
+String.prototype.equals=function(obj){
+	return (this==obj);
+}
 
 </script>
 </head>
