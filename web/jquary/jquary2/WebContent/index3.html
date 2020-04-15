@@ -4,27 +4,29 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style>
-
+body{padding:0;margin:0;}
+#navi ul,#navi ul li{list-style:none;;margin:0;padding:0;}
+#navi ul{background-color:#000000;height:50px}
+#navi ul:before,#navi ul:after{content:'';desplay:block;clear:both}
+#navi ul li{float:left;width:20%;heigth:470px;background-color:#666666
+;color:white;font-size=20pt;font-weight:bold; line-height:47px;}
+#navi ul li:last-child{float:right;text-align:right}
 </style>
 <script src="js/jquery-3.5.0.min.js"></script>
 <script>
+var menus=['회사소개','과정소개','강좌소개','계시판','회원가입']
 $(document).ready(function(){
-	$('input[type=button]').click(function(){
-		alert('폼을 전송합니다.')
+	let ul=$('<ul>').appendTo($('#navi>#row'))
+	menus.forEach(function(item,index){
+		$('<li>',{text:item}).appendTo(ul);
 	})
-	setTimeout(function(){
-		$('input[type=button]').click();
-				
-	},2000);
 })
 </script>
 </head>
 <body>
-<form>
-	<label for="name">
-		이름<input id="name" type="text" name="name">
-	</label>
-	<input type="button" value="전송" style="display:none">
-</form>
+<div id="navi">
+	<div id="row">
+	</div>
+</div>
 </body>
 </html>
