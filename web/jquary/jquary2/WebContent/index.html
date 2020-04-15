@@ -9,23 +9,9 @@ var names=['홍길동','이순신','에디슨','심청이','변사또','강감�
 			'연개소문','스톤헤드','노벨']
 $(document).ready(function(){
 
-	
-	var obj=$('li').eq(0);
-	console.log(obj);
-	var obj2=$('li:first-child')
-	console.log(obj2);
-	//use seletor and mothod
-
-	var obj=$('li').first();
-	console.log(obj);
-	var obj=$('li').last();
-	console.log(obj);
-	var obj2=$('li:nth-child(1)');
-	console.log(obj2);
-	var obj2=$('li:last-child');
-	console.log(obj2);
-	//eq is zero base selector is 1 base
-	
+var obj=$('li').first().add($('li').last());
+obj.css('background-color','black').css('color','white');
+console.log(obj);
 		
 	})
 </script>
