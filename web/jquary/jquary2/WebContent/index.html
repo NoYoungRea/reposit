@@ -9,11 +9,10 @@ var names=['홍길동','이순신','에디슨','심청이','변사또','강감�
 			'연개소문','스톤헤드','노벨']
 $(document).ready(function(){
 
-var obj=$('li').first().add($('li').last());
-obj.css({'background-color':'black','color':'white'});
-console.log(obj);
-		
-	})
+	var obj=$(document).find('li');
+	console.log(obj)
+	
+})
 </script>
 </head>
 <body>
