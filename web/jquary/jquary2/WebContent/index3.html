@@ -9,8 +9,12 @@
 <script src="js/jquery-3.5.0.min.js"></script>
 <script>
 $(document).ready(function(){
-	$('form').submit(function(e){
-		e.preventDefault();
+	$(document).click(function(){
+		alert('click발생');
+	})
+	$('input[type=button]').click(function(){
+		alert('buuton click')
+		e.stopPropagation();
 	})
 })
 </script>
@@ -20,7 +24,7 @@ $(document).ready(function(){
 	<label for="name">
 		이름<input id="name" type="text" name="name">
 	</label>
-	<input type="submit" value="전송">
+	<input type="button" value="전송">
 </form>
 </body>
 </html>
