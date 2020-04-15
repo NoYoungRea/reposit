@@ -9,14 +9,12 @@ var names=['홍길동','이순신','에디슨','심청이','변사또','강감�
 			'연개소문','스톤헤드','노벨']
 $(document).ready(function(){
 
-	var list=$('li');
-	list.filter(function(index){
-		if(index%2==0){
-			return true;
-		}
-		return false;
-	}).css('background-color','black')
-})
+	
+	var obj=$('li').eq(0);
+	console.log(obj);
+	var obj2=$('li:first-child')
+	console.log(obj2);
+	})
 </script>
 </head>
 <body>
