@@ -8,19 +8,12 @@
 var names=['홍길동','이순신','에디슨','심청이','변사또','강감찬','을지문덕',
 			'연개소문','스톤헤드','노벨']
 $(document).ready(function(){
-// 	names.forEach(function(item,index){
-// 		console.log(index+':'+item);
-// 	})
-//javascript's foreach
-	var lis=$('ul>li');
-	lis.each(function(index,item){
-		$(item).text(names[index]);
-	
+
+	var list=$('li');
+	var selectList = list.filter(':even');
+	selectList.each(function(index,item){
+		$(item).css('background-color','black');
 	})
-//jquary's each
-//하나를 꺼내 item에 넣은 것은 jquary 객체로 안 본다.
-
-
 })
 </script>
 </head>
