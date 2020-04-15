@@ -18,7 +18,7 @@ $(document).ready(function(){
 })
 function change(){
 	$('li').first().appendTo($('ul'));
-	setTimeout(change,2000);
+	setTimeout(arguments.callee,2000);
 }
 
 </script>
