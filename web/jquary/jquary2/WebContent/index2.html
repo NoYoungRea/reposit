@@ -6,21 +6,26 @@
 <style>
 body {margin:0;padding:0}
 ul,li{list-style:none;margin:0;padding:0}
-ul{width:500px;margin:100px auto;}
+ul{width:500px; height:350px;margin:20px auto;}
 ul:before,ul:after{content '';display:block;clear:both;}
-ul>li {float: left; width:100px;height:60px;}
+ul>li {float: left; width:100%;height:100%; display:none}
 ul>li>img{width:100%;height:100%}
+ul>li:nth-child(3){display:block;|}
 div{width:500px;margin:0 auto;text-align:center;}
+
 </style>
 <script src="js/jquery-3.5.0.min.js"></script>
 <script>
 $(document).ready(function(){
-	setTimeout(change,2000)
+	$('button').eq(0).click(function(){
+		$('li').first().appendTo($('ul'));
+	})
+	$('button').eq(1).click(function(){
+		$('li').last().prependTo($('ul'));
+	})
+	
+	
 })
-function change(){
-	$('li').first().appendTo($('ul'));
-	setTimeout(arguments.callee,2000);
-}
 
 </script>
 </head>
