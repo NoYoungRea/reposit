@@ -8,8 +8,11 @@
 </style>
 <script src="js/jquery-3.5.0.min.js"></script>
 <script>
-
-$('form').off('submit');//안 없어진다. 우리가 작성한 것이 아니기 때문에
+$(document).ready(function(){
+	$('form').submit(function(e){
+		e.preventDefault();
+	})
+})
 </script>
 </head>
 <body>
