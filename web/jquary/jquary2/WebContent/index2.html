@@ -18,7 +18,7 @@ div{width:500px;margin:0 auto;text-align:center;}
 <script>
 $(document).ready(function(){
 	
-	$('button').on('click',function(){
+	$('button').one('click',function(){
 		if($(this).text().equals('prev')){
 			$('li:last-child').prependTo($('ul'));
 		}
@@ -26,7 +26,6 @@ $(document).ready(function(){
 			$('li:first-child').appendTo($('ul'));
 	
 	})
-	$('button').off('click');
 })
 String.prototype.equals=function(obj){
 	return (this==obj);
