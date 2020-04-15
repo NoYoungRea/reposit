@@ -9,13 +9,13 @@
 <script src="js/jquery-3.5.0.min.js"></script>
 <script>
 $(document).ready(function(){
-	$(document).click(function(){
-		alert('click발생');
-	})
 	$('input[type=button]').click(function(){
-		alert('buuton click')
-		e.stopPropagation();
+		alert('폼을 전송합니다.')
 	})
+	setTimeout(function(){
+		$('input[type=button]').click();
+				
+	},2000);
 })
 </script>
 </head>
@@ -24,7 +24,7 @@ $(document).ready(function(){
 	<label for="name">
 		이름<input id="name" type="text" name="name">
 	</label>
-	<input type="button" value="전송">
+	<input type="button" value="전송" style="display:none">
 </form>
 </body>
 </html>
