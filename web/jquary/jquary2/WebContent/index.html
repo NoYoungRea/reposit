@@ -10,9 +10,10 @@ var names=['홍길동','이순신','에디슨','심청이','변사또','강감�
 $(document).ready(function(){
 
 	var list=$('li');
-	var selectList = list.filter(':even');
-	selectList.each(function(index,item){
-		$(item).css('background-color','black');
+	list.each(function(index,item){
+		if(index%2==0){
+		$(item).css('background-color','black');		
+		}
 	})
 })
 </script>
