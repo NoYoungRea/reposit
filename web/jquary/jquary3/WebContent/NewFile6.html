@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="js/jquery-3.5.0.min.js"></script>
+<script>
+$(document).ready(function(){
+	$.ajax({
+		url:'http://localhost:8080/jquary3/data.txt'
+		
+	}).done(function(data){
+		$('body').text(data)
+	})
+})
+</script>
+</head>
+
+<body>
+</body>
+</html>
