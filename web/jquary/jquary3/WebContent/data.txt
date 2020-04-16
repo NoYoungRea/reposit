@@ -1,1 +1,1 @@
-{ name:'hgd',age:20,depart:'human resorse'}
+{ "name":"hgd","age":20,"depart":"human resorse"}

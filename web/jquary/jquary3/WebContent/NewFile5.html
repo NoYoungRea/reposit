@@ -6,10 +6,10 @@
 <script src="js/jquery-3.5.0.min.js"></script>
 <script>
 	$(document).ready(function(){
-		$.ajax({url:'http://localhost:8080/jquary3/data.txt'})
+		$.ajax({url:'http://localhost:8080/jquary3/data.txt',
+			dataType:'json'})
 		.done(function(data){
-			let obj=eval('('+data+')');
-			$('#content').val('이름:'+obj.name);
+			$('#content').val('이름:'+data.name);
 		})
 	})
 </script>
