@@ -5,13 +5,13 @@
 <title>Insert title here</title>
 <script src="js/jquery-3.5.0.min.js"></script>
 <script>
-$.command=function(){
-	console.log('!!!');
+$.fn.command=function(){
+	console.log(this);
 }
 
 $(document).ready(function(){
 
-	$.command();
+	$('button').command();//called by selector
 })
 </script>
 </head>
