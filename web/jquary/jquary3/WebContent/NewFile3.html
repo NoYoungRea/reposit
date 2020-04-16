@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="js/jquery-3.5.0.min.js"></script>
+<script>
+
+$(document).ready(function(){
+
+	$('button').click(function(){
+		$('img').attr('src',$(this).data('src'))
+	})
+	
+})
+
+</script>
+</head>
+<body>
+<div><img src="1.jpg" style="width:200px;height:120px"></div>
+<div>
+<button data-src="1.jpg">1</button>
+<button data-src="2.jpg">2</button>
+<button data-src="3.jpg">3</button>
+<button data-src="4.jpg">4</button>
+<button data-src="5.jpg">5</button>
+</div>
+</body>
+</html>
