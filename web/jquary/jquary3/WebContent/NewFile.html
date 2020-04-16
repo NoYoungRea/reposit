@@ -6,16 +6,26 @@
 <script src="js/jquery-3.5.0.min.js"></script>
 <script>
 $(document).ready(function(){
-	$('button').click(function(e,data){
-		data()
+	$('button').click(function(e){
+		console.log(e);
 	})
-	$('button').trigger('click',function(){
-		console.log("!!");
-	});
-})//different with just event method
+	var e=$.Event('click');//jquary 전역 method.
+	$('button').trigger(e);
+	
+	
+	$('#data').keydown(function(e){
+		$(this).val($(this).val()+e.keyCode);
+	})
+	var k=$.Event('keydown');
+	k.keyCode='A';
+	$('#data').trigger(k);
+	
+})
 </script>
 </head>
 <body>
-<button type="button">button</button>
+<input type="text">
+<button id="data", type="button">button</button>
+
 </body>
 </html>
