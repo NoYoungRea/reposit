@@ -7,9 +7,11 @@
 <script>
 $(document).ready(function(){
 	$('button').click(function(e,data){
-		console.log(data)
+		data()
 	})
-	$('button').trigger('click',{name:'hgd',age:30});
+	$('button').trigger('click',function(){
+		console.log("!!");
+	});
 })//different with just event method
 </script>
 </head>
