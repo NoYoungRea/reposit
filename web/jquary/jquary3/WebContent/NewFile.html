@@ -5,21 +5,13 @@
 <title>Insert title here</title>
 <script src="js/jquery-3.5.0.min.js"></script>
 <script>
+$.command=function(){
+	console.log('!!!');
+}
+
 $(document).ready(function(){
-	$('button').click(function(e){
-		console.log(e);
-	})
-	var e=$.Event('click');//jquary 전역 method.
-	$('button').trigger(e);
-	
-	
-	$('#data').keydown(function(e){
-		$(this).val($(this).val()+e.keyCode);
-	})
-	var k=$.Event('keydown');
-	k.keyCode='A';
-	$('#data').trigger(k);
-	
+
+	$.command();
 })
 </script>
 </head>
