@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="js/jquery-3.5.0.min.js"></script>
+<script>
+$.fn.getPrompt=function(msg){
+	let field=this;
+	this.focus(function(){
+		let div=$('<div>',{class:'prompt'}).appendTo($('body'))
+		let ul=$('<ul>').appendTo(div);
+		let li1=$('<li>',{text:msg}).appendTo(ul);
+		let li2=$('<li>').appendTo(ul);
+		$('<input>',{type:'text'}).appendTo(li2);
+		let li3=$('<li>').appendTo(ul);
+		let btn=$('<button>',{type:'button',text:'확인'}).appendTo(li3)
+		btn.click(function(){
+			$(field).val(input.val());
+			$(this).closest('.prompt').remove()
+		})
+	});
+}
+$(document).ready(function(){
+	$('#name').getPrompt("이름 입력");
+	$('#email').getPrompt("메일 입력")
+})
+</script>
+</head>
+
+<body>
+<label for="name"><input type="text" id="name"></label> 
+<label for="name"><input type="text" id="email"></label> 
+
+</body>
+</html>
