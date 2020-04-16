@@ -26,15 +26,30 @@ $(document).ready(function(){
 			$('<img>',{src:item.file}).appendTo($('.thumb'));
 		})
 		
+		
 		$('.thumb>img').on('click',function(){
-			$('.preview>img').attr('src',$(this).attr('src'))
+				$('.preview>img').attr('src',$(this).attr('src'))
+		})
+			
+		$('button').click(function(){
+			if($(this).text()=="뒤"){
+				$('<img>',{src:$('.thumb>img:last-child').attr('src')}).prependTo($('.thumb'))
+				$('.thumb>img').last().remove();
+			}
+			else{
+				$('<img>',{src:$('.thumb>img:first-child').attr('src')}).appendTo($('.thumb'))
+				$('.thumb>img').first().remove();
+			}
+			$('.preview>img').attr('src',$('.thumb>img').eq(2).attr('src'))
+			
+			$('.thumb>img').on('click',function(){
+				$('.preview>img').attr('src',$(this).attr('src'))
+			})
+			
+			
 		})
 	})
-	
-
-
-	
-
+		
 })
 </script>
 </head>
@@ -42,6 +57,9 @@ $(document).ready(function(){
 <div class="screen">
 	<div class="preview"><img src="1.jpg"></div>
 	<div class="thumb"></div>
+	<button type="button" value="b1" nmae="b1" id="b1">뒤</button>
+	<button type="button" value="b2" nmae="b2" id="b2">앞</button>
+
 </div>
 </body>
 </html>
