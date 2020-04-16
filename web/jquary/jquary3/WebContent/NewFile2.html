@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="js/jquery-3.5.0.min.js"></script>
+<script>
+
+var students=Array({name:'hge',age:20},{name:'abc',age:30});
+$(document).ready(function(){
+	$('button').eq(0).data(students[0])
+	$('button').eq(1).data(students[1])
+
+	$('button').click(function(){
+		console.log($(this).data())
+	})
+})
+
+</script>
+</head>
+<body>
+<button id="button1", type="button">button1</button>
+<button id="button2", type="button">button2</button>
+
+</body>
+</html>
