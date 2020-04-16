@@ -11,7 +11,9 @@ $(document).ready(function(){
 		
 	}).done(function(data){
 		var items=eval('('+data+')')
-		$('body').text(items)
+		$(items).each(function(index,item){
+			$('<div>',{text:item.title}).appendTo($('body'));
+		})
 	})
 })
 </script>
