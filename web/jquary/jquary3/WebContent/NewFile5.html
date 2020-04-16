@@ -6,11 +6,8 @@
 <script src="js/jquery-3.5.0.min.js"></script>
 <script>
 	$(document).ready(function(){
-		$.ajax({url:'http://localhost:8080/jquary3/data.txt',
-			dataType:'json'})
-		.done(function(data){
-			$('#content').val('이름:'+data.name);
-		})
+	let url='http://localhost:8080/jquary3/data.txt';
+	$('textarea').load(url)
 	})
 </script>
 </head>
