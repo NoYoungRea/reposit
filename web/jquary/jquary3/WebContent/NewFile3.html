@@ -5,9 +5,13 @@
 <title>Insert title here</title>
 <script src="js/jquery-3.5.0.min.js"></script>
 <script>
-
+var images=["1.jpg","2.jpg","3.jpg","4.jpg","5.jpg",]
 $(document).ready(function(){
 
+	var list=$('button');
+	for(var i=0;i<5;i++){
+		$(list[i]).data('src',images[i])
+	}
 	$('button').click(function(){
 		$('img').attr('src',$(this).data('src'))
 	})
@@ -19,11 +23,11 @@ $(document).ready(function(){
 <body>
 <div><img src="1.jpg" style="width:200px;height:120px"></div>
 <div>
-<button data-src="1.jpg">1</button>
-<button data-src="2.jpg">2</button>
-<button data-src="3.jpg">3</button>
-<button data-src="4.jpg">4</button>
-<button data-src="5.jpg">5</button>
+<button >1</button>
+<button >2</button>
+<button >3</button>
+<button >4</button>
+<button >5</button>
 </div>
 </body>
 </html>
