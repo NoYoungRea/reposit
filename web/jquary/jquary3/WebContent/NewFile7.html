@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+
+.preview>img{
+	width:250px;
+	height:200px
+}
+.thumb>img {
+	width:50px;
+	height:50px
+}
+</style>
+<script src="js/jquery-3.5.0.min.js"></script>
+<script>
+$(document).ready(function(){
+	
+	$.ajax({
+		url:'http://localhost:8080/jquary3/data.txt'
+	}).done(function(data){
+		var items=eval('('+data+')');
+		$(items).each(function(index,item){
+			$('<img>',{src:item.file}).appendTo($('.thumb'));
+		})
+		
+		$('.thumb>img').on('click',function(){
+			$('.preview>img').attr('src',$(this).attr('src'))
+		})
+	})
+	
+
+
+	
+
+})
+</script>
+</head>
+<body>
+<div class="screen">
+	<div class="preview"><img src="1.jpg"></div>
+	<div class="thumb"></div>
+</div>
+</body>
+</html>
