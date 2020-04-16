@@ -10,7 +10,8 @@ $(document).ready(function(){
 		url:'http://localhost:8080/jquary3/data.txt'
 		
 	}).done(function(data){
-		$('body').text(data)
+		var items=eval('('+data+')')
+		$('body').text(items)
 	})
 })
 </script>
