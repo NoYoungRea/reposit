@@ -8,7 +8,8 @@
 	$(document).ready(function(){
 		$.ajax({url:'http://localhost:8080/jquary3/data.txt'})
 		.done(function(data){
-			$('#content').val(data);
+			let obj=eval('('+data+')');
+			$('#content').val('이름:'+obj.name);
 		})
 	})
 </script>
