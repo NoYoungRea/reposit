@@ -12,8 +12,13 @@ $(document).ready(function(){
 	$('button').eq(1).data('key',students[1])
 
 	$('button').click(function(){
+		if($.hasData(this){
+			console.log("ㅇ.")
+		}
 		console.log($(this).data('key'))
 	})
+	
+	
 })
 
 </script>
