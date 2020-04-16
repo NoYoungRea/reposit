@@ -8,11 +8,11 @@
 
 var students=Array({name:'hge',age:20},{name:'abc',age:30});
 $(document).ready(function(){
-	$('button').eq(0).data(students[0])
-	$('button').eq(1).data(students[1])
+	$('button').eq(0).data('key',students[0])
+	$('button').eq(1).data('key',students[1])
 
 	$('button').click(function(){
-		console.log($(this).data())
+		console.log($(this).data('key'))
 	})
 })
 
