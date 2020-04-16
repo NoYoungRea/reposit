@@ -5,15 +5,16 @@
 <title>Insert title here</title>
 <script src="js/jquery-3.5.0.min.js"></script>
 <script>
-$.fn.bindClick=function(){
+$.fn.bindClick=function(id){
 	this.click(function(){
-		console.log("button click")
+		console.log(id+"button click")
 	})
 }
 
 $(document).ready(function(){
 
-	$('button').bindClick();
+	$('button').eq(0).bindClick('1번');
+	$('button').eq(1).bindClick('2번');
 })
 </script>
 </head>
