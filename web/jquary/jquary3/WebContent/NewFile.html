@@ -3,10 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<script src="js/jquery-3.5.0.min.js">
+<script src="js/jquery-3.5.0.min.js"></script>
+<script>
 $(document).ready(function(){
-	$('button').on('click',function(){
-		
+	$('button').on({
+		mousedown:function(){
+			console.log('event!')
+		}
 	})
 })
 </script>
