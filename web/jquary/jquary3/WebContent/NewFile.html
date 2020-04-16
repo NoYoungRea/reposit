@@ -6,12 +6,11 @@
 <script src="js/jquery-3.5.0.min.js"></script>
 <script>
 $(document).ready(function(){
-	$('button').on({
-		mousedown:function(){
-			console.log('event!')
-		}
+	$('button').click(function(e,data){
+		console.log(data)
 	})
-})
+	$('button').trigger('click',10);
+})//different with just event method
 </script>
 </head>
 <body>
