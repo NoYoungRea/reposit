@@ -8,24 +8,18 @@
 
 var students=Array({name:'hge',age:20},{name:'abc',age:30});
 $(document).ready(function(){
-	$('button').eq(0).data('key',students[0])
-	$('button').eq(1).data('key',students[1])
 
 	$('button').click(function(){
-		if($.hasData(this){
-			console.log("ㅇ.")
-		}
-		console.log($(this).data('key'))
+		console.log($(this).data('name'))
 	})
-	
 	
 })
 
 </script>
 </head>
 <body>
-<button id="button1", type="button">button1</button>
-<button id="button2", type="button">button2</button>
+<button id="button1" data-name="hgd" type="button">button1</button>
+<button id="button2" data-name="abc" type="button">button2</button>
 
 </body>
 </html>
