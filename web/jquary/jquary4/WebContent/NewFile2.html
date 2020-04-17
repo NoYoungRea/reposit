@@ -14,17 +14,25 @@ ul>li{height:20px;line-height:20px}
 <script>
 	
 		function changeNews(interval){
-			setTimeout(function(){
-				$('.news>ul>li:first-child').fadeOut(500,function(){
-					$('.news>ul>li:first-child').appendTo($('.news>ul'));
-					$('.news>ul>li:first-child').fadeIn(1000)
-				})
-				changeNews(interval);
-			},interval);
+			$('.news>ul>li').not(':first-child').fadeOut();
+			(function(interval){
+				let func=arguments.callee;
+
+				setTimeout(function(){
+					$('.news>ul>li:first-child').fadeOut(500,function(){
+						$('.news>ul>li:first-child').appendTo($('.news>ul'));
+						$('.news>ul>li:first-child').fadeIn(1000)
+					})
+					func(interval)
+				},interval);
+
+				
+			})(interval);
+			
+			
 		}
 	
 	$(document).ready(function(){
-		$('.news>ul>li').not(':first-child').fadeOut();
 		changeNews(2000);
 	})
 
