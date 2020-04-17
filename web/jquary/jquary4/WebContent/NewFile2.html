@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style>
+*{font-size:9pt;}
+body{padding:0;margin:0;}
+ul,ul>li{list-style:none; padding:0; margin:0;}
+ul{width:300px;height:20px;margin:0 auto; overflow:hidden}
+ul>li{height:20px;line-height:20px}
+</style>
+<script src="js/jquery-3.5.0.min.js"></script>
+<script>
+	
+		function changeNews(interval){
+			setTimeout(function(){
+				$('.news>ul>li:first-child').slideUp(500,function(){
+					$('.news>ul>li:first-child').appendTo($('.news>ul'));
+					$('.news>ul>l:last-child').css({
+						height:'20px',
+						display:'block',
+						visibility:'visible'
+					})
+				})
+				changeNews(interval);
+			},interval);
+		}
+	
+	$(document).ready(function(){
+		changeNews(2000);
+	})
+
+</script>
+</head>
+<body>
+<div class="news">
+	<ul>
+		<li>
+		오늘의 날씨는 비가 ㄴ릴 예정
+		<li>
+		오늘은 불금입니다.
+		</li>
+		<li>
+		블굼이모임	
+		</li>
+	</ul>
+</div>
+</body>
+</html>
