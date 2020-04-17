@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script src="js/jquery-3.5.0.min.js"></script>
+<script>
+$(document).ready(function(){
+	$('button').click(function(){
+		let name=$('input[name=name]').val();
+		let age=$('input[name=age]').val();
+
+		$.ajax({
+			url:'/board',
+			type:'post',
+			data:{name:name,age:age},
+			success:function(data){
+				console.log(data.message)
+			}
+		})
+	})
+})
+</script>
+</head>
+<body>
+<form method="post" action="/board"></form>
+이름 <input type="text" name="name">
+연령<input type="number"name="age">
+<button type="submit"></button>
+</body>
+</html>
