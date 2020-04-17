@@ -15,19 +15,16 @@ ul>li{height:20px;line-height:20px}
 	
 		function changeNews(interval){
 			setTimeout(function(){
-				$('.news>ul>li:first-child').slideUp(500,function(){
+				$('.news>ul>li:first-child').fadeOut(500,function(){
 					$('.news>ul>li:first-child').appendTo($('.news>ul'));
-					$('.news>ul>l:last-child').css({
-						height:'20px',
-						display:'block',
-						visibility:'visible'
-					})
+					$('.news>ul>li:first-child').fadeIn(1000)
 				})
 				changeNews(interval);
 			},interval);
 		}
 	
 	$(document).ready(function(){
+		$('.news>ul>li').not(':first-child').fadeOut();
 		changeNews(2000);
 	})
 
