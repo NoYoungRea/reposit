@@ -8,6 +8,14 @@
 
 $(document).ready(function(){
 	var socket=io('http://localhost:8080');
+	
+	socket.on('message',function(data){
+		$('textarea').val($('textarea').val()+data+'\n');
+	})
+	
+	$('button').click(function(){
+		socket.emit('message',$('#msg').val())
+	})
 })
 
 </script>

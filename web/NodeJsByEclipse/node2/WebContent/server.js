@@ -12,4 +12,8 @@ app.use(express.static('.'));
 io.on('connection',function(socket){
 	let id=socket.id
 	console.log('client :'+id)
+	
+	socket.on('message',function(data){
+		io.emit('message','from server : '+data);
+	})
 })//like java's accpte
