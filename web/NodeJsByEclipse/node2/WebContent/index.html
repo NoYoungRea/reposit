@@ -2,9 +2,24 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<script src="js/jquery-3.5.0.min.js"></script>
+<script src="node_modules/socket.io-client/dist/socket.io.js"></script>
+<script>
+
+$(document).ready(function(){
+	var socket=io('http://localhost:8080');
+})
+
+</script>
 <title>Insert title here</title>
 </head>
 <body>
-
+<div class="screen">
+	<textarea style="width:300px;height:200px"></textarea>
+</div>
+<div>
+	<input type="text" id="msg">
+	<button type="button">전송하기</button>
+</div>
 </body>
 </html>
