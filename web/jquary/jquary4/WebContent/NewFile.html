@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script src="js/jquery-3.5.0.min.js"></script>
+<script>
+	$.fn.slide=function(){
+		this.click(function(){
+			if($(this).text()=='slide up'){
+				$('body>div:first-child>img').slideUp(10000,function(){
+					//do when end
+					alert('slide up finished')
+				});
+				
+			}
+			else{
+				$('body>div:first-child>img').slideDown(10000);	
+				alert('slide down finished')
+			}
+		})
+	}
+	$(document).ready(function(){
+		$('button').slide();
+	})
+</script>
+</head>
+<body>
+	<div>
+		<img src="1.jpg" style="width:300px;height:200px">
+	</div>
+	<div>
+		<button type="button">slide up</button>
+		<button type="button">slide down</button>
+	
+	</div>
+</body>
+</html>
