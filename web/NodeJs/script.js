@@ -9,6 +9,7 @@ server.listen(port,function(){
 server.use(exp.static('public'));
 //정적 파일 route
 
+
 server.get('/board',function(request,response){
 	console.log('게시글 목록보기 요청이 접수되었습니다.');
 	response.send('게시글 목록보기 요청이 접수됨');
@@ -25,3 +26,8 @@ server.patch('/board',function(request,response){
 	console.log('게시글 편집 요청이 접수되었습니다.');
 	response.send('게시글 편집 요청이 접수됨');
 })
+server.all('/board',function(request,response){
+	console.log('전부');
+	response.send('전부');
+})
+
