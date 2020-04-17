@@ -8,16 +8,26 @@
 	$.fn.slide=function(){
 		this.click(function(){
 			if($(this).text()=='slide up'){
-				$('body>div:first-child>img').slideUp(10000,function(){
-					//do when end
-					alert('slide up finished')
-				});
+				
+				setTimeout(function(){
+				
+					$('body>div:first-child>img').slideUp(10000,function(){
+						//do when end
+						alert('slide up finished')
+					});
+					
+				},0)
 				
 			}
 			else{
-				$('body>div:first-child>img').slideDown(10000);	
-				alert('slide down finished')
+				setTimeout(function(){
+					
+					$('body>div:first-child>img').slideDown(10000);	
+					alert('slide down finished')
+				},0)
+				
 			}
+				
 		})
 	}
 	$(document).ready(function(){
