@@ -6,26 +6,64 @@
 <script src="node_modules/socket.io-client/dist/socket.io.js"></script>
 <script>
 
-$(document).ready(function(){
-	var socket=io('http://localhost:8080');
+$(document).ready(function() {
+	var socket = null;
 	
-	socket.on('message',function(data){
-		$('textarea').val($('textarea').val()+data+'\n');
-	})
+	$('.intro>button').click(function()  {
+		if($(this).siblings('#name').val().trim() == '') {
+			alert('이름을 입력하신 후 연결을 해주세요.');
+			return;
+		}
+		
 	
-	$('button').click(function(){
-		socket.emit('message',$('#msg').val())
-	})
-})
+		socket = io.connect('http://localhost:8080');
+		
+		socket.on('hello', function(data) { //채팅방입장시 보내주는 내용
+			$('textarea').val('').val(data);//textarea를 비워줬다.
+			
+		});
+		
+		
+		socket.on('msg', function(data) {//textarea에 데이터 입력
+			$('textarea').val($('textarea').val()+ data+ '\n');
+		});
+		socket.emit('who', $(this).siblings('#name').val().trim());
+	});
+	
+	
+	
+	$('.action>button').click(function() {
+		if(socket==null) {
+			alert('채팅서버에 접속 후 사용');
+			return;
+		}
+		if($('#msg').val().trim() !='') {
+			socket.emit('msg', $('#msg').val());
+		}
+	});
+	
+	$('#msg').keyup(function(e) {//엔터 입력시 채팅전송
+		if(e.keyCode ==13) {
+			$('.action>button').trigger('click');
+		}
+	});
+});
 
 </script>
 <title>Insert title here</title>
 </head>
 <body>
+
+<div class="intro">
+	<input type="text" id="name">
+	<button type="button">전송하기</button>
+</div>
+
+
 <div class="screen">
 	<textarea style="width:300px;height:200px"></textarea>
 </div>
-<div>
+<div class="action">
 	<input type="text" id="msg">
 	<button type="button">전송하기</button>
 </div>
