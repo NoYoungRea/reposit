@@ -9,13 +9,19 @@ server.listen(port,function(){
 server.use(exp.static('public'));
 //정적 파일 route
 
-http://localhost or http://localhost/주소 get 방식 요청->이게 default이다.
-server.get('/',function(request,response){
-	console.log('요청주소 : http://localhost, method: get');
-	response.send('get방식 요청에 대한 응답');
+server.get('/board',function(request,response){
+	console.log('게시글 목록보기 요청이 접수되었습니다.');
+	response.send('게시글 목록보기 요청이 접수됨');
 })
-server.post('/',function(request,response){
-	console.log('요청주소 : http://localhost, method: post');
-	response.send('post방식 요청에 대한 응답');
+server.post('/board',function(request,response){
+	console.log('게시글 등록 요청이 접수되었습니다.');
+	response.send('게시글 등록 요청이 접수됨');
 })
-
+server.delete('/board',function(request,response){
+	console.log('게시글 삭제 요청이 접수되었습니다.');
+	response.send('게시글 삭제 요청이 접수됨');
+})
+server.patch('/board',function(request,response){
+	console.log('게시글 편집 요청이 접수되었습니다.');
+	response.send('게시글 편집 요청이 접수됨');
+})
