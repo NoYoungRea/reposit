@@ -7,13 +7,12 @@ var conn=mysql.createConnection({
 	database:'nodejs'
 })
 
-conn.connect(function(error){
+conn.query('SELECT*FROM members',function(error,result,fields){
 	if(error){
-		console.log("error");
-		console.log(error);
-		return
+		console.log('error')
+	}else{
+		console.log(result);
+		console.log(fields);
 	}
-	else{
-		console.log("complete")
-	}
+	
 })
