@@ -1,19 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <script src="js/jquery-3.5.0.min.js"></script>
 <script>
 
 $(document).ready(function(){
-	console.log('im ready');
+	$('buuton').click(function(){
+		$.ajax({
+			url:'/members',
+			type:'get',
+			success:function(data){
+				$('textarea').val(data);
+			}
+		})
+	})
 })
+
 
 </script>
 <title>Insert title here</title>
 
 </head>
-<body>
 
+<body>
+<textarea style="width:300px; height:200px"></textarea>
+<button type="button">회원목록가져오기</button>
 </body>
 </html>
