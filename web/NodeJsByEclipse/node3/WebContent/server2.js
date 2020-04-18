@@ -31,5 +31,26 @@ app.post('/members',function(request,response){
 	let nick=request.body.nick;
 	let password=request.body.password;
 	
-	console.log(email+':'+nick)
+	if(email.isEmpty()){
+		response.send({errno:1,message:'전자메일주소가 입력되지 않았습니다.'})
+	}
+	else if(nick.isEmpty()){
+		response.send({errno:2,message:'별명을 입력하지 않았습니다.'})
+	}
+	else if(password.isEmpty()){
+		response.send({errno:3,message:'비밀번호가 입력되지 않았습니다.'})
+	}
+	else{
+		let sql='insert into members(email,nick,keyString) values(?,?,password(?))'
+		conn.query(sql,[email,nick,password],function(error){
+			if(error){
+				response.send({errno:9,message:'sql오류가 발생하였습니다.'})
+				return;
+			}
+			response.send({errno:0,message:'회원가입이 정상적으로 처리되었습니다.'})
+		})
+	}
 })
+String.prototype.isEmpty=function(){
+	return (this.trim()=='');
+}
