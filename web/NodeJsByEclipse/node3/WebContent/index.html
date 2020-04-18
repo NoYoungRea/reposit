@@ -74,6 +74,27 @@ $(document).ready(function(){
 			},
 			success:function(data){
 				console.log(data);
+				switch(data.errno){
+				case 0:
+					alert(data.message);
+					break;
+				case 1:
+					alert(data.message);
+					$('#email').val('').focus
+					break;
+				case 2:
+					alert(data.message);
+					$('#nick').val('').focus
+					break;
+				case 3:
+					alert(data.message);
+					$('#password2').val('');
+					$('#password').val('').focus
+					break;
+				default:
+					alert(data.message);
+					break;
+				}
 			}
 		})
 	})
