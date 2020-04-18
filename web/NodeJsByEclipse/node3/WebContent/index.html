@@ -2,16 +2,37 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<style>
+* { font-size: 9pt; }
+body { padding: 0; margin: 0; }
+.memberList > ul, .memberList > ul > li { list-style: none; padding: 0; margin: 0; }
+.memberList > ul { width: 500px; margin: 0 auto; border-top: 1px dashed #000000; }
+.memberList > ul:first-child { border-top: 1px solid #000000; background-color: #ececec; font-weight: bold; }
+.memberList > ul:last-child { border-bottom: 1px solid #000000; }
+.memberList > ul::before, .memberList > ul::after { content: ''; display: block; clear: both; }
+.memberList > ul > li { width: 100px; height: 25px; line-height: 25px; float: left; text-align: center; }
+.memberList > ul > li:nth-child(1) { width: 160px; }
+.memberList > ul > li:nth-child(2) { width: 80px; }
+.memberList > ul > li:nth-child(3) { width: 160px; }
+.memberList > ul > li:nth-child(4) { width: 80px; } 
+.action { width: 500px; height: 25px; line-height: 25px; margin: 0 auto; text-align: right; }
+</style>
 <script src="js/jquery-3.5.0.min.js"></script>
 <script>
 
 $(document).ready(function(){
-	$('buuton').click(function(){
+	$('button').click(function(){
 		$.ajax({
 			url:'/members',
 			type:'get',
 			success:function(data){
-				$('textarea').val(data);
+				data.forEach(function(row,index){
+					var ul=$('<ul>')
+					$('<li>',{text:row.email}).appendTo(ul)
+					$('<li>',{text:row.nick}).appendTo(ul)
+					$('<li>',{text:row.regdate}).appendTo(ul)
+					ul.appendTo('.memberList')
+				})
 			}
 		})
 	})
@@ -24,7 +45,16 @@ $(document).ready(function(){
 </head>
 
 <body>
-<textarea style="width:300px; height:200px"></textarea>
+<div class="memberList">
+      <ul>
+         <li>메일주소</li>
+         <li>별명</li>
+         <li>가입일자</li>
+         <li>상태</li>
+      </ul>
+      
+   </div>
+
 <button type="button">회원목록가져오기</button>
 </body>
 </html>
