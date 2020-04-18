@@ -19,9 +19,16 @@ body { padding: 0; margin: 0; }
 </style>
 <script src="js/jquery-3.5.0.min.js"></script>
 <script>
-
+String.prototype.isEmpty=function(){
+	return (this.trim()=='')
+}
+$.fn.isEmpty=function(){
+	return($(this).val().trim()=='');
+}
+$.fn.equals=function(obj){
+	return ($(this).val()==obj.val());
+}
 $(document).ready(function(){
-	$('button').click(function(){
 		$.ajax({
 			url:'/members',
 			type:'get',
@@ -35,7 +42,45 @@ $(document).ready(function(){
 				})
 			}
 		})
+
+
+	$('#btnRegister').click(function(){
+		if($('#email').val().isEmpty()){
+			alert('전자메일주소를 입력해주세요!!');
+			$('#email').val('').focus();
+			return;
+		}
+		if($('#nick').isEmpty()){
+			alert('별명을 입력해 주세요!');
+			return;
+		}
+		if($('#nick').isEmpty()){
+			alert('별명을 입력해 주세요!');
+			return;
+		}
+		if(!$('#password').equals($('#password2'))){
+			alert('비밀벉호가 다릅니다');
+			$('#password2').val('').focus();
+			return;
+		}
+
+		$.ajax({
+			url:'/members',
+			type:'post',
+			data:{
+				email:$('#email').val(),
+				nick:$('#nick').val(),
+				password:$('#password').val()
+			},
+			success:function(data){
+				console.log(data);
+			}
+		})
 	})
+	
+
+	
+	
 })
 
 
@@ -53,8 +98,28 @@ $(document).ready(function(){
          <li>상태</li>
       </ul>
       
-   </div>
-
-<button type="button">회원목록가져오기</button>
+</div>
+<div class="registerForm">
+	<table>
+	<tr>
+		<td>메일주소</td>
+		<td><input type="text" id="email"></td>
+	</tr>
+	<tr>
+		<td>별명</td>
+		<td><input type="text" id="nick"></td>
+	</tr>
+	<tr>
+		<td>비밀번호</td>
+		<td><input type="password" id="password"></td>
+	</tr>
+	<tr>
+		<td>비밀번호확인</td>
+		<td><input type="password" id="password2"></td>
+	</tr>
+	
+	</table>
+</div >
+<button id="btnRegister" type="button">회원가입</button>
 </body>
 </html>

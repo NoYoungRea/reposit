@@ -25,3 +25,11 @@ app.get('/members', function(request, response){ //라우터 사용 //url은 mem
       
    });
 });
+
+app.post('/members',function(request,response){
+	let email=request.body.email;
+	let nick=request.body.nick;
+	let password=request.body.password;
+	
+	console.log(email+':'+nick)
+})
