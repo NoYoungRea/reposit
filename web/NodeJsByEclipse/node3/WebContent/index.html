@@ -18,6 +18,7 @@ body { padding: 0; margin: 0; }
 .action { width: 500px; height: 25px; line-height: 25px; margin: 0 auto; text-align: right; }
 </style>
 <script src="js/jquery-3.5.0.min.js"></script>
+<script src="/node_modules/socket.io-client/dist/socket.io.js"></script>
 <script>
 String.prototype.isEmpty=function(){
 	return (this.trim()=='')
@@ -28,21 +29,36 @@ $.fn.isEmpty=function(){
 $.fn.equals=function(obj){
 	return ($(this).val()==obj.val());
 }
-$(document).ready(function(){
-		$.ajax({
-			url:'/members',
-			type:'get',
-			success:function(data){
-				data.forEach(function(row,index){
-					var ul=$('<ul>')
-					$('<li>',{text:row.email}).appendTo(ul)
-					$('<li>',{text:row.nick}).appendTo(ul)
-					$('<li>',{text:row.regdate}).appendTo(ul)
-					ul.appendTo('.memberList')
-				})
-			}
-		})
 
+function refresh(){
+	$.ajax({
+		url:'/members',
+		type:'get',
+		success:function(data){
+			$('.memberList>ul').each(function(index,item){
+				if(index>0){
+					$(item).remove();
+				}
+			})
+			data.forEach(function(row,index){
+				var ul=$('<ul>')
+				$('<li>',{text:row.email}).appendTo(ul)
+				$('<li>',{text:row.nick}).appendTo(ul)
+				$('<li>',{text:row.regdate}).appendTo(ul)
+				ul.appendTo('.memberList')
+			})
+		}
+	})
+
+}
+
+$(document).ready(function(){
+	var socket=io('http://localhost:8080');
+	socket.on('refresh',function(data){
+		refresh();			
+
+	})
+	refresh();			
 
 	$('#btnRegister').click(function(){
 		if($('#email').val().isEmpty()){

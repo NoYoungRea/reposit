@@ -2,6 +2,11 @@ const PORT = 80;
 var express = require('express');
 var mysql = require('mysql');
 var bodyParser = require('body-parser');
+var io=require('socket.io')(8080);
+
+io.on('connection',function(socket){
+	console.log(socket.id);
+})
 
 var app = express();
 var conn = mysql.createConnection({
@@ -47,6 +52,7 @@ app.post('/members',function(request,response){
 				response.send({errno:9,message:'sql오류가 발생하였습니다.'})
 				return;
 			}
+			io.emit('refresh','회원목록갱신요망');//msg부분에서 선택적으로 할수도 잇음
 			response.send({errno:0,message:'회원가입이 정상적으로 처리되었습니다.'})
 		})
 	}
