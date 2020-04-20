@@ -9,20 +9,32 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-@WebServlet("/second")
+@WebServlet("/third")
 public class ServletTest extends HttpServlet {
 	private static final long serialVersionUID = 1L;
     public ServletTest() {
         super();
-    	System.out.println("새성자 호출	");
     }
-    public void init(ServletConfig config)throws ServletException{
-    	System.out.println("initmethod is called");
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    	response.setContentType("text/html;charset=UTF-8");
+    	String name=request.getParameter("name");
+    	int age=Integer.parseInt(request.getParameter("age"));
+    	PrintWriter out=response.getWriter();
+    	
+    	out.println("<!DOCType html>");
+    	out.println("<html>");
+    	out.println("<head>");
+    	out.println("<meta charset='UTF-8'/>");
+    	out.println("<title>ThirdServlet</title>");
+    	out.println("</head>");
+    	out.println("<body>");
+    	out.println("<div>이름"+name+"<div>");
+    	out.println("<div>age"+age+"<div>");
+    	out.println("</body>");
+    	out.println("</html>");
     	
     }
-	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.setContentType("text/html;charset=UTF-8");
-		response.getWriter().println("second");
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	}
 
 }
