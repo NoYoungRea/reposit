@@ -16,7 +16,12 @@ public class ServletTest extends HttpServlet {
         super();
     }
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    	response.setContentType("text/html;charset=UTF-8");
+
+    	
+    }
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    	request.setCharacterEncoding("UTF-8");
+		response.setContentType("text/html;charset=UTF-8");
     	String name=request.getParameter("name");
     	int age=Integer.parseInt(request.getParameter("age"));
     	PrintWriter out=response.getWriter();
@@ -32,9 +37,6 @@ public class ServletTest extends HttpServlet {
     	out.println("<div>age"+age+"<div>");
     	out.println("</body>");
     	out.println("</html>");
-    	
-    }
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	}
 
 }
