@@ -1,14 +1,43 @@
+
+
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
-<title>Insert title here</title>
+<meta charset="UTF-8">
+<title>회원가입</title>
 </head>
 <body>
-<form action="/servelet/third" method="post">
-	name<input type="text" name="name"><br>
-	age<input type="text" name="age"><br>
-	<button type="submit">submit</button>
-</form>
+   <form action="/servelet/register" method="post">
+      <table>
+      <thead>
+         <tr>
+            <td colspan="2">회원가입</td>
+         </tr>
+      </thead>
+         <tr>
+            <th>전자메일</th>
+            <td><input type="text" name="email"/></td>
+         </tr>
+         <tr>
+            <th>비밀번호</th>
+            <td><input type="text" name="pass"/></td>
+         </tr>
+         <tr>
+            <th>비밀번호확인</th>
+            <td><input type="text" name="pass2"/></td>
+         </tr>
+         <tr>
+            <th>별명</th>
+            <td><input type="text" name="nick"/></td>
+         </tr>
+         <tfoot>
+            <tr>
+               <td colspan ="2">
+                  <button type="submit">등록하기</button>
+               </td>
+            </tr>
+         </tfoot>
+      </table>
+   </form>
 </body>
 </html>
