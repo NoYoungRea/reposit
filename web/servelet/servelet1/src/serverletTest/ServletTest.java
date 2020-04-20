@@ -14,6 +14,7 @@ public class ServletTest extends HttpServlet {
 	private static final long serialVersionUID = 1L;
     public ServletTest() {
         super();
+    	System.out.println("새성자 호출");
     }
     public void init(ServletConfig config)throws ServletException{
     	System.out.println("initmethod is called");
