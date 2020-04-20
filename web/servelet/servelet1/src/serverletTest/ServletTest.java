@@ -14,14 +14,15 @@ public class ServletTest extends HttpServlet {
 	private static final long serialVersionUID = 1L;
     public ServletTest() {
         super();
-    	System.out.println("새성자 호출");
+    	System.out.println("새성자 호출	");
     }
     public void init(ServletConfig config)throws ServletException{
     	System.out.println("initmethod is called");
     	
     }
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	   	System.out.println("doget is called");
+	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		response.setContentType("text/html;charset=UTF-8");
+		response.getWriter().println("second");
 	}
 
 }
