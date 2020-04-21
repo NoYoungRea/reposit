@@ -7,6 +7,18 @@
 <script>
 
 $(document).ready(function(){
+	
+	
+   $('#loginCheck').click(function(){
+	      $.ajax({
+	         url: './loginCheck',
+	         type: 'post',
+	         success: function(data){
+	            console.log(data);
+	         }
+	      });
+	   });
+	
 	$('#btnLogin').click(function(){
 		$.ajax({
 			url:$('#loginForm').attr('action'),
@@ -17,9 +29,7 @@ $(document).ready(function(){
 			},
 			success:function(data){
 				console.log(data);
-				//정장적으로  로그인 처리가 되었다면
-				//계쩡이 존재하지 않을 경우
-				//비밀번호가 일치하지 않을 경우
+
 			}
 		})
 
@@ -44,5 +54,6 @@ $(document).ready(function(){
 	</ul>
 </div>
 </form>
+<button type="button" id="loginCheck">로그인 확인</button>
 </body>
 </html>
