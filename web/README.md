@@ -207,24 +207,7 @@ servlet 최초 호출 시에 init 메서드 먼저 실행 됨. 그 다음부터�
 - 세션은 서버가 가지나 세션 아이디는 클라이언트에서 가짐. 세션 아이디는 클라이언트 쿠키에 저장됨. 이후 요청할때마다 세션 아이디를 제출함.
 세션 객채는 필요없으면(참조가 안되거나) 사라짐(by 가비지), 세션은 살아 있음. 단, 브라우저를 전부 닫으면 세션이 종료되면서 클라이언트가 가지고 있던 쿠기(세션아이디를 가지고 있는)도 수명을 다하게 됨, so 다시 웹을 열어 요청을 하게 되면, 이전 세션은 기억 하지 못한다.
 - getssesion(false) 발급 되었다면 세션반환 없으면 null, 하지만 이걸로 로그인 했느지 안 했는지 안했는지 판단하는 것은 부족(장바구니 하느라 세션 연결 했을 수도 잇잖아. getsession(true)는 있는거 가져오고 없으면 만듬.
-	<servlet>
-		<servlet-name>aaaa</servlet-name>
-		<servlet-class>CookieServlet</servlet-class>
-	</servlet>
-	
-	<servlet-mapping>
-		<servlet-name>aaaa</servlet-name>
-		<url-pattern>/cookie</url-pattern>
-	</servlet-mapping>
-	<servlet>
-		<servlet-name>bb</servlet-name>
-		<servlet-class>CookieCheckServlet</servlet-class>
-	</servlet>
-	
-	<servlet-mapping>
-		<servlet-name>bb</servlet-name>
-		<url-pattern>/cookie1</url-pattern>
-	</servlet-mapping>
+
 ![image](https://user-images.githubusercontent.com/49268465/79889656-50b0fc80-8439-11ea-8112-d2555f525f5d.png)
 
 ### 쿠키
@@ -238,26 +221,8 @@ servlet 최초 호출 시에 init 메서드 먼저 실행 됨. 그 다음부터�
 1. servlet을 실행하면 최초에 servletconfig객체가 생성되어 init()메서드의 인자값으로 전달된 다음 init이 실행 된다. 여기서 servletconfig객체의 메서드를 이용하여 앱 단위로 정보를 저장할 수 있게 해주는 sevletcontext()객체를 추출할 수 있다.
 2. servlet은 httpservlet을 상속받는데 그렇게 위쪽에서 이미 정의 해놓은 함수가 있다. 가저다 쓰면 된다. getservletContext()
 - 저 객체에 변수 설정
-		<context-param>
-		<param-name>address</param-name>
-		<param-value>www.powerlinux.co.kr</param-value>
-	</context-param>
-	<context-param>
-		<param-name>jdbcURL</param-name>
-		<param-value>jdbc:mariadb//localhost:3306</param-value>
-	</context-param>
-	<context-param>
-		<param-name>database</param-name>
-		<param-value>servlet</param-value>
-	</context-param>
-	<context-param>
-		<param-name>dbUser</param-name>
-		<param-value>servlet</param-value>
-	</context-param>
-	<context-param>
-		<param-name>dbPass</param-name>
-		<param-value>1234</param-value>
-	</context-param>
+![image](https://user-images.githubusercontent.com/49268465/79889784-79d18d00-8439-11ea-8709-0729ecef9133.png)
+
 - 추출
 getinitParameter메서드를 통해 추출한다. 반환값은 string이므로 정수사용하려면 알아서 바꿔라
 
