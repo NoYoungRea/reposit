@@ -225,6 +225,7 @@ servlet 최초 호출 시에 init 메서드 먼저 실행 됨. 그 다음부터�
 		<servlet-name>bb</servlet-name>
 		<url-pattern>/cookie1</url-pattern>
 	</servlet-mapping>
+![image](https://user-images.githubusercontent.com/49268465/79889656-50b0fc80-8439-11ea-8112-d2555f525f5d.png)
 
 ### 쿠키
 - 쿠키는 서버에서 만들어 주어 사용자에게 보낸다. (속서으로 이 쿠키가 어떤 경로에 들어갈때 request의 헤더에 넣어가지고 올지, 얼마나 살아 있을지 등을 결정한다. 유효시간을 따로 설정하지 않으면 브라우저와 생명주기를 같이 한다. 설정하면 그것보다 오래 살아남을 수 있다.) 사용자는 서버에 접속할때 쿠키를 들고 들어오는데(제한이 없다면) 서버에서는 이것을 추출할 수 있다.
