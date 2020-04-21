@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+<script src="./jquery-3.5.0.min.js"></script>
+<script>
+
+$(document).ready(function(){
+	$('#btnLogin').click(function(){
+		$.ajax({
+			url:$('#loginForm').attr('action'),
+			type:$('#loginForm').attr('method'),
+			data:{
+				email:$('input[name=email]').val(),
+				pass:$('input[name=pass]').val()
+			},
+			success:function(data){
+				console.log(data);
+				//정장적으로  로그인 처리가 되었다면
+				//계쩡이 존재하지 않을 경우
+				//비밀번호가 일치하지 않을 경우
+			}
+		})
+
+		
+	})
+})
+</script>
+</head>
+<body>
+<form action="./login" method="post" id="loginForm">
+<div class="login">
+	<ul>
+		<li>메일주소</li>
+		<li><input type="text" name="email"></li>
+	</ul>
+	<ul>
+		<li>비밀번호</li>
+		<li><input type="password" name="pass"></li>
+	</ul>
+	<ul>
+		<li><button type="button" id="btnLogin">로그인</button></li>
+	</ul>
+</div>
+</form>
+</body>
+</html>
