@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>게시판</title>
+<script src="./js/jquery-3.5.0.min.js"></script>
+
+<script>
+$(document).ready(function(){
+	$('button').click(function(){
+		$.ajax({
+			url: 'writeBoard',
+			method: 'post',
+			data: {
+				title: $('#title').val(),
+				content: $('#content').val()
+			}
+		}).done(function(data){
+			console.log(data);
+			var obj = eval('(' + data+ ')');
+			if(obj.errno == 9){
+		
+				location.href='login.html';
+			}
+		});
+	});
+});
+</script>
+</head>
+<body>
+   <form>
+      <table>
+         <tr>
+            <th style="width: 100px">제목</th>
+            <td style="width: 400px"><input type="text" id="title" style="width:350px;"/></td>
+         </tr>
+         <tr>
+            <th>내용</th>
+            <td><textarea id="content" style="width:350px; height:150px;"></textarea></td>   
+         <tr>
+            <td colspan="2" style="text-align: center;">
+               <button type="button">등록하기</button>
+            </td>
+         </tr>
+      </table>
+   </form>
+</body>
+</html>

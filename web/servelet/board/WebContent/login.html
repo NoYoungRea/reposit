@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+<script src="./js/jquery-3.5.0.min.js"></script>
+<script>
+
+$(document).ready(function(){
+	
+	
+   $('#loginCheck').click(function(){
+	      $.ajax({
+	         url: './loginCheck',
+	         type: 'post',
+	         success: function(data){
+	            console.log(data);
+	         }
+	      });
+	   });
+	
+	$('#btnLogin').click(function(){
+		$.ajax({
+			url:$('#loginForm').attr('action'),
+			type:$('#loginForm').attr('method'),
+			data:{
+				email:$('input[name=email]').val(),
+				pass:$('input[name=pass]').val()
+			},
+			success:function(data){
+				console.log(data);
+				var obj = eval('(' + data+ ')');
+				if(obj.errno == 0){
+					location.href='boardWrite.html';
+				}
+			}
+		})
+
+		
+	})
+})
+</script>
+</head>
+<body>
+<form action="./login" method="post" id="loginForm">
+<div class="login">
+	<ul>
+		<li>메일주소</li>
+		<li><input type="text" name="email"></li>
+	</ul>
+	<ul>
+		<li>비밀번호</li>
+		<li><input type="password" name="pass"></li>
+	</ul>
+	<ul>
+		<li><button type="button" id="btnLogin">로그인</button></li>
+	</ul>
+</div>
+</form>
+<button type="button" id="loginCheck">로그인 확인</button>
+</body>
+</html>
