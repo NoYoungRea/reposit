@@ -12,10 +12,9 @@ import javax.servlet.http.HttpServletResponse;
 public class SecondServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	ServletContext sc=this.getServletContext();
-	String name=(String)sc.getAttribute("name");
-	response.setContentType("text/html; charset=utf-8");
-	response.getWriter().println(name);
+		ServletContext sc=this.getServletContext();
+		System.out.println(sc.getInitParameter("address"));
+	
 	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	}
