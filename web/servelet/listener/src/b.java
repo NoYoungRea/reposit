@@ -47,7 +47,10 @@ public class b extends HttpServlet {
 		}catch(Exception e) {
 		}
 		out.println("세션을 삭제합니다.");
-		session.invalidate();
+		//session.invalidate();
+		request.setAttribute("name", "shdudfo");
+		request.setAttribute("name", "wjdalwk");
+		request.removeAttribute("name");
 	}
 
 
