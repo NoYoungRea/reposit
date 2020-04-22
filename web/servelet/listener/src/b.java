@@ -11,6 +11,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  * Servlet implementation class b
@@ -38,6 +39,15 @@ public class b extends HttpServlet {
 		ServletContext sc=request.getServletContext();
 		out.println("testservlet doget");	
 		out.println(sc.getAttribute("servername"));
+		
+		out.println("세션을 생성합니다.");
+		HttpSession session=request.getSession();
+		try {
+			Thread.sleep(2000);
+		}catch(Exception e) {
+		}
+		out.println("세션을 삭제합니다.");
+		session.invalidate();
 	}
 
 
