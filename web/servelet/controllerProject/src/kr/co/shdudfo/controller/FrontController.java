@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.Enumeration;
 import java.util.HashMap;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -33,12 +34,14 @@ public class FrontController extends HttpServlet {
 	}
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String uri=request.getRequestURI();
+		String dispatcherUri=null;
 		ServiceController sc=null;
 		if(services.containsKey(uri)) {
-			services.get(uri).doService(request, response);
-		}else {
-			services.get("/controllerProject/unknown").doService(request, response);
+			dispatcherUri=services.get(uri).doService(request, response);
+			RequestDispatcher disp=request.getRequestDispatcher(dispatcherUri);
+			disp.forward(request, response);
 		}
+
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

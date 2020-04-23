@@ -9,10 +9,11 @@ import javax.servlet.http.HttpServletResponse;
 public class UnkownService implements ServiceController{
 
 	@Override
-	public void doService(HttpServletRequest request, HttpServletResponse response)
+	public String doService(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		response.setContentType("text/html;charset=utf-8");
 		response.getWriter().println("알수없는 서비스 요청");	
+		return "unkown_result.html";
 	}
 
 }
