@@ -183,6 +183,7 @@ slideup slidedown하는 도중엔 다른 거 못함. 화면 전체가 멈추어 
 클라이언트 요청 서버 응답 연결 끊 -> 반복. 이런방식이라면 서버가 클라이언트에게 원할때 무언가를 보낼 수 없음 so 클라이언트가 주기적으로 요청함으로서 해결->long polling방식->문제는 요청 간격이 5초라면 2.5초에 무언가가 일어날 수 있음->interval가 생김 so 서버가 push 를 해 줄수 있어야 함.원래라면 요청을 하고 기다리는데, 아작스는 요청을 해 놓고 갈길 감. 서버쪽에서 응답시 정해둔 함수로 처리를 함. 데이터를 받으려 기다려서 처리할 필요가 없음. ->비동기 방식이라 함. 주의할 점은 작업이 완료된 데이터를 실시간으로 접근할 수 없다.
 
 # servlet
+- 톰캣은 컨테이너를 제공함. 이 컨테이너에는 어플리케이션이 실리게 된다.(servelet context) 톰켓에게 즉, 컨테이너에게 요청을 하면 컨테이너에서는 해당되는 요청을 처리할 앱과 그 안의 servlet을 찾는다. 만약 여러 사람이 같은 서블릿을 요청하면 쓰레드로 돌아감.
 - reload true false : 컴파일을 미리 할 것인지, 요청하면 할 것인지.
 - 결과를 웹문서의 형태로 전송하기 위해 writer를 사용했지만, 음원 같은 것들 보내려면 outputsteam 같은 것을 사용하면 된다.
 - 응답 여러곳에서 하면 안 된다.
@@ -199,6 +200,17 @@ servlet 최초 호출 시에 init 메서드 먼저 실행 됨. 그 다음부터�
 #### service
 단순히 모든 요청에 대한 서비스 요청이라고 생각하면 안 됨. httpseverlet(부모)에 요청이 들어오면, 부모의 servelet()이 호출되고 이 안에서 해당하는 (get이나, post 같은 것들이 호출 된다.(내용 없음 )) 만약 doget같은 것들이 오버라이딩 되어 있다면 오버라이딩 되어 있는 것이 호출되어진다. serverlet을 오버라이딩 하면 그것이 호출 됨.
 
+### 다른 곳으로 자원 이동
+- 다른 곳의 자원으로 이동하는 방법이 두가지가 있다. 
+1. response로부터  sendRedirect를 이용하는 것(외부의 자원으로도 요청 재지정이 가능하다.)
+2. dispather 을 이용하는 방법(내부만 가능)
+- request dispatcher객체를 얻는 두가지 방법 
+1. servlet Context객체로부터
+2. servlet request 객체로 부터
+- 1번은 상대 절대 경로 다 가능, 2번은 절대 경로만.
+
+- foward와 include 방식이 있는데, foward는 딴 곳에서 처리하게 한 후, 응답하게 하는 것이고(나도 응답 친구도 응답 하면 안 됨), include는 말 그대로 문자 그대로 포함시키는 역활을 한다. 그렇게 하면 내가 out 1을 하고 친구가 out2를 해도 다 추력이 된다.(foward는 1이 씹힘)
+request의 getattribute는 object 반환하므로 항상 인지하고 캐스팅 해 주어야 함.
 
 ### session (여기서 부터 데이터 저장 삼총사)
 - 웹 어플리케이션=서블릿 컨텍스트
@@ -230,4 +242,24 @@ getinitParameter메서드를 통해 추출한다. 반환값은 string이므로 �
 web의 환경 설정이 되어 있는 web.xml에 다른 페이지들의 환경 값도 저장하여(시작과 동시에 가지고 있어야 해서) 사용한다.
 
 시작과 동시에 사용할 필요가 없다면, void setAttribute(String name,Object value)와Object getattribute(string name)을 사용하여 할 수 있다. 단지, 추출시에는 나오는게 object형이므로 형변환 해서 사용해 주길 바란다. 여담으로 삭제는 void removeAttribute(String name)
+### filter
+- 어노테이션과 web.xml 차이 없음
+- 어노테이션의 경우 필터 채인은 알아서 구성됨.xml의 경우 순서대로
+- init dofilter distroy 반드시 구현
+- init의 경우에 config객체가 만들어져서 들어오게 되는데, 이걸 이용하여 전처리가 가능
+- parma의 경우 init-parm(servlet, filter) context-param이 있는데 전자의 경우 해당 클래스 내부에서 사용가능하고 후자의 경우는 프로젝트 안, 즉, sevelet context내부에서 전부 사용가능하다.
+- servelet이 끝나면 자동으로 filter로 돌아온다.
+- urlpattern에서 /*는 모든 servelet을 말한다.
+- 상대경로와 절대경로
+1. /는 root directory를 뜻한다. 주로 webcontent를 뜻하는 것 같다.
+2. ./는 혀재 위치를 뜻한다. 상대경로로 지정할때 사용한다.
+
+#### init
+- init은 필터 객체가 생성될때 단 한번 실행 된다.(필터 객체는 web.xml을 읽을때 생기므로, 서버 시작시 생긴다고 봐도 무방하다. anotation으로 하는 경우도 xml과 똑같은 효과를 내므로 마찬가지 이다. 서버 시작시 init이 한번 호출 된다.) destory 는 필터객체가 삭제될때 호출 된다. dofilter은 필터링을 설정한 서블릿이 호출될때마다 호출된다.
+- 서블릿은 필터와 달리 web.xml을 읽는 다고 해서 객체가 생성되지 않는다. 요청이 있어야 그에 해당하는 servlet 객체가 생성되고 config객체가 생성되며 servlet init 메서드의 인수로 던저주게 된다. 처음 web.xml을 읽을때 생성된, 필터 객체들로 전처리를 한 후, service 메서드를 실행하게 된다.  그리고 끝났다고 해서 내려가지 않고 요청시 계속 사용될 수 있도록 메모리에 올려져 있다.
+
+### jdbc 파일 tip(with release ver
+- jdbc 배포시 ext에 있으면 가져가기 힘들다. 거기서 빼내서 web_inf 안에 lib 안에 처 넣은 다음 build path에서 추가해주면 된다. 나중에 배포할때 얘도 포함해서 배포가 된다.
+- 프로젝트 컨피규어 들어가서 메이븐을 누르고 확인 눌러주면, pom.xml이 생긴다. 클릭해서 들어가면 dependency에 들어갈 수 있고 add를 누른후 maven repository에 들어가 mariadb를 타고 들어가 나오는 정보를 그대로 입력해주면 된다. 그럼 자동으로 pome에 추가를 해 준다. 그렇게 되면 library->maven dependency아래 jar파일이 하나 생긴 것을 볼 수 있다. 잘 안되면 maven->update 눌러가며 해봐라. 그냥 pome 안에 직접적으로 넣어 주어도 된다.
+
 
