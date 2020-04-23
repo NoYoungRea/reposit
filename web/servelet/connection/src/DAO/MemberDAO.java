@@ -16,11 +16,49 @@ public class MemberDAO {
 
 	public boolean insert(Member m) {
 		boolean result=false;
+		
+		Connection con=null;
+		Statement stmt=null;
+		ResultSet rs=null;
+		try {
+			con=DbController.getConnection();
+			stmt=con.createStatement();
+			stmt.executeQuery("insert into members values('"
+			+m.getEmail()+"', password("+m.getPassword()+"),'"+m.getNick()+"',default,default)");
+			result=true;
+		}catch(NamingException e) {
+			e.printStackTrace();
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}finally {
+			DbController.close(stmt,con);
+		}
+		
+		
+		
 		return result;
 	}
 	
 	public boolean delete(Member m) {
+		
 		boolean result=false;
+		Connection con=null;
+		Statement stmt=null;
+		ResultSet rs=null;
+		try {
+			con=DbController.getConnection();
+			stmt=con.createStatement();
+
+			stmt.executeQuery("DELETE from members WHERE email='"+m.getEmail()+"'");
+			result=true;
+		}catch(NamingException e) {
+			e.printStackTrace();
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}finally {
+			DbController.close(stmt,con);
+		}
+		
 		return result;
 	}
 	public Member search(String email,String password) {

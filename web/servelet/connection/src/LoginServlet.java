@@ -23,10 +23,12 @@ public class LoginServlet extends HttpServlet {
       request.setCharacterEncoding("utf-8");
       response.setContentType("text/html; charset=utf-8"); 
       PrintWriter out = response.getWriter();
+	  MemberDAO memberdao=new MemberDAO();
       
+      //계정 찾기
       String email = request.getParameter("email");
       String pass = request.getParameter("pass");
-	   MemberDAO memberdao=new MemberDAO();
+
 	   Member member =memberdao.search(email,pass);
 	   
 	   if(member==null) {
@@ -39,13 +41,34 @@ public class LoginServlet extends HttpServlet {
 		   disp.forward(request, response);
 	   }
 			   
+	   
+      //계정 만들기
+      String email1 = request.getParameter("email");
+      String nick= request.getParameter("nick");
+      String pass1 = request.getParameter("pass");
+      Member m=new Member();
+      m.setEmail(email);
+      m.setNick(nick);
+      m.setPassword(pass);
+      memberdao.insert(m);
       
+      
+      
+      //계정 지우기
+      String email2 = request.getParameter("email");
+      Member m2=new Member();
+      m.setEmail(email);
+      memberdao.delete(m);
+	   
    }
 
    
    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
       // TODO Auto-generated method stub
       doGet(request, response);
+   }
+   public void search() {
+	   
    }
 
 }
