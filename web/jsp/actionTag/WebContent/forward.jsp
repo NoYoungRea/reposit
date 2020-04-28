@@ -9,7 +9,7 @@
 <body>
 
 <%
-
+request.setCharacterEncoding("utf-8");
 String name=request.getParameter("name");
 out.println(name);%>
 </body>
