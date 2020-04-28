@@ -9,9 +9,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-<jsp:getProperty property="email" name="member"/>
-<%-- <%=member.getEmail() %> --%>
-<jsp:getProperty property="nick" name="member"/>
+${param.email}<br/>
+${param.nick }<br/>
 
 </body>
 </html>
