@@ -17,6 +17,10 @@
 <c:set var="member" value="<%=new kr.co.shdudfo.vo.MemberVO() %>" scope="page"/>
 <c:set target="${member}" property="email" value="shdudfo"/>
 <c:set target="${member}" property="nick" value="wjdalwk"/>
+
+<c:if test="${member.email=='shdudfo'}">
+
+</c:if> 
 <%
 	MemberVO member=(MemberVO)pageContext.getAttribute("member");
 %>
