@@ -14,15 +14,12 @@
 <title>Insert title here</title>
 </head>
 <body>
-<c:set var="kor" value="90" scope="page"/>
-<c:set var="eng" value="100" scope="page"/>
-<c:set var="math" value="93" scope="page"/>
-<c:set var="avg" value="${(kor+eng+math) div 3}" scope="page"/>
-<c:choose>
-	<c:when test="${avg>90}">A</c:when>
-	<c:when test="${avg>80}">B</c:when>
-	<c:when test="${avg>70}">C</c:when>
-</c:choose>
-
+<%
+	String[] names={"홍길동","이순신","심청이","에디슨"};
+	pageContext.setAttribute("names", names);
+%>
+<c:forEach var="name" items="${names}">
+${name}
+</c:forEach>
 </body>
 </html>	
