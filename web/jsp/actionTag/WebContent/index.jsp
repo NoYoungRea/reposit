@@ -1,10 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="java.net.URLEncoder" %>
-
-<jsp:forward page="forward.jsp">
-	<jsp:param name="name" value='<%= URLEncoder.encode("홍길동","utf-8") %>'/>
-</jsp:forward>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,6 +8,13 @@
 <title>Insert title here</title>
 </head>
 <body>
+
+
+<form method="post" action="register.jsp">
+	메일주소<input type="text"	name="email"><br>
+	별명<input type="text" name="nick"><br>
+	<button type="submit">전송하기</button>
+</form>
 
 </body>
 </html>	
