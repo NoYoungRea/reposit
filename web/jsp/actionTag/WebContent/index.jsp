@@ -14,16 +14,15 @@
 <title>Insert title here</title>
 </head>
 <body>
-<c:set var="member" value="<%=new kr.co.shdudfo.vo.MemberVO() %>" scope="page"/>
-<c:set target="${member}" property="email" value="shdudfo"/>
-<c:set target="${member}" property="nick" value="wjdalwk"/>
+<c:set var="kor" value="90" scope="page"/>
+<c:set var="eng" value="100" scope="page"/>
+<c:set var="math" value="93" scope="page"/>
+<c:set var="avg" value="${(kor+eng+math) div 3}" scope="page"/>
+<c:choose>
+	<c:when test="${avg>90}">A</c:when>
+	<c:when test="${avg>80}">B</c:when>
+	<c:when test="${avg>70}">C</c:when>
+</c:choose>
 
-<c:if test="${member.email=='shdudfo'}">
-
-</c:if> 
-<%
-	MemberVO member=(MemberVO)pageContext.getAttribute("member");
-%>
-액션 태그 : <%=member.getEmail().equals("shdudfo")%><br>
-EL 표현: ${member.email=="shdudfo"}<br/>
+</body>
 </html>	
