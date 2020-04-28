@@ -2,14 +2,10 @@
     pageEncoding="UTF-8"%>
 <%@ page import="java.net.URLEncoder" %>
 <%@ page import="kr.co.shdudfo.vo.MemberVO" %>
-<%
-	MemberVO member=new MemberVO();
-	member.setEmail("shdudfo");
-	member.setNick("sh");
-%>
-<%-- <jsp:useBean id="member" class="kr.co.shdudfo.vo.MemberVO"></jsp:useBean> --%>
-<%-- <jsp:setProperty name="member" property="email" value="shdudfo"/> --%>
-<%-- <jsp:setProperty name="member" property="nick" value="sh"/> --%>
+<%@	taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@	taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+
+
 
 <!DOCTYPE html>
 <html>
@@ -18,7 +14,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-${member.nick}
-${member["nick"]}
+<c:set var="username" value="shdudfo" scope="page"/>
+${username}
 </body>
 </html>	
