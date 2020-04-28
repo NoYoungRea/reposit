@@ -9,6 +9,12 @@
 </head>
 <body>
 
+<form method="post" action="register.jsp">
+	A<input type="text"	name="A"><br>
+	B<input type="text" name="B"><br>
+	<button type="submit">전송하기</button>
+</form>
+
 
 <form method="post" action="register.jsp">
 	메일주소<input type="text"	name="email"><br>

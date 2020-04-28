@@ -1,7 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<jsp:useBean class="kr.co.shdudfo.vo.MemberVO" id="member" />
-<jsp:setProperty name="member" property="*"/>
+
+
+<%
+int a=Integer.parseInt(request.getParameter("A"));
+int b=Integer.parseInt(request.getParameter("B"));
+
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,8 +14,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-${param.email}<br/>
-${param.nick }<br/>
+<%=a+b %>
 
 </body>
 </html>
