@@ -14,7 +14,12 @@
 <title>Insert title here</title>
 </head>
 <body>
-<c:set var="username" value="shdudfo" scope="page"/>
-${username}
-</body>
+<c:set var="member" value="<%=new kr.co.shdudfo.vo.MemberVO() %>" scope="page"/>
+<c:set target="${member}" property="email" value="shdudfo"/>
+<c:set target="${member}" property="nick" value="wjdalwk"/>
+<%
+	MemberVO member=(MemberVO)pageContext.getAttribute("member");
+%>
+액션 태그 : <%=member.getEmail()%><br>
+EL 표현: ${member.email}<br/>
 </html>	
