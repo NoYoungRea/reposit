@@ -1,6 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="java.net.URLEncoder" %>
+<jsp:useBean id="member" class="kr.co.shdudfo.vo.MemberVO"></jsp:useBean>
+<jsp:setProperty name="member" property="email" value="shdudfo"/>
+<jsp:setProperty name="member" property="nick" value="sh"/>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,19 +12,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-
-<form method="post" action="register.jsp">
-	A<input type="text"	name="A"><br>
-	B<input type="text" name="B"><br>
-	<button type="submit">전송하기</button>
-</form>
-
-
-<form method="post" action="register.jsp">
-	메일주소<input type="text"	name="email"><br>
-	별명<input type="text" name="nick"><br>
-	<button type="submit">전송하기</button>
-</form>
-
+${member.nick}
+${member["nick"]}
 </body>
 </html>	
