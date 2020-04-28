@@ -12,7 +12,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-${member.nick}
+${pageScope.member.nick}
 ${member["nick"]}
 </body>
 </html>	
