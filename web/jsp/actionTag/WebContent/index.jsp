@@ -19,7 +19,13 @@
 	pageContext.setAttribute("names", names);
 %>
 <c:forEach var="name" items="${names}" varStatus="stat">
+<c:if test='${stat.first}'>
+-------------------------<br>
+</c:if>
 ${stat.first}:${stat.last} : ${stat.index}:${stat.count}:${name}<br>
+<c:if test='${stat.last}'>
+-------------------------<br>
+</c:if>
 </c:forEach>
 </body>
 </html>	
