@@ -14,7 +14,7 @@ int b=Integer.parseInt(request.getParameter("B"));
 <title>Insert title here</title>
 </head>
 <body>
-<%=a+b %>
+${param.A+param.B}
 
 </body>
 </html>
