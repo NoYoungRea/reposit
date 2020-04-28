@@ -27,5 +27,9 @@ ${stat.first}:${stat.last} : ${stat.index}:${stat.count}:${name}<br>
 -------------------------<br>
 </c:if>
 </c:forEach>
+
+<c:forEach var="number" begin="1" end="10" step="2" varStatus="stat">
+	${number}
+</c:forEach>
 </body>
 </html>	
