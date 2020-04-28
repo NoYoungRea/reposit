@@ -18,8 +18,8 @@
 	String[] names={"홍길동","이순신","심청이","에디슨"};
 	pageContext.setAttribute("names", names);
 %>
-<c:forEach var="name" items="${names}">
-${name}
+<c:forEach var="name" items="${names}" varStatus="stat">
+${stat.first}:${stat.last} : ${stat.index}:${stat.count}:${name}<br>
 </c:forEach>
 </body>
 </html>	
