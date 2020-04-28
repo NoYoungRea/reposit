@@ -20,6 +20,6 @@
 <%
 	MemberVO member=(MemberVO)pageContext.getAttribute("member");
 %>
-액션 태그 : <%=member.getEmail()%><br>
-EL 표현: ${member.email}<br/>
+액션 태그 : <%=member.getEmail().equals("shdudfo")%><br>
+EL 표현: ${member.email=="shdudfo"}<br/>
 </html>	
