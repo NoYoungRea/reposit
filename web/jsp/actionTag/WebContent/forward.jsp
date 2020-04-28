@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="java.net.URLDecoder" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,8 +10,7 @@
 <body>
 
 <%
-request.setCharacterEncoding("utf-8");
-String name=request.getParameter("name");
-out.println(name);%>
+out.println(URLDecoder.decode(request.getParameter("name"),"utf-8"));
+%>
 </body>
 </html>
