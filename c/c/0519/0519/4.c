@@ -17,9 +17,10 @@ arr_t foo(int row, int col) {
 
 int main() {
 	int(*p)[3] = foo();
+
+
 }
 #endif
-
 
 
 // 행과 열이 고정되지 않은 정수 타입의 2차원 배열을 생성하는 라이브러리를 구현해

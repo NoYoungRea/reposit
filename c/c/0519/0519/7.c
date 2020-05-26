@@ -1,5 +1,5 @@
 
-#if 0
+#if 1
 #include <stdio.h>
 
 int add(int a, int b) { return a + b; }
@@ -15,17 +15,20 @@ int main() {
 	switch (op) {
 	case 0:
 		result = add(n1, n2);
+		break;
 	case 1:
 		result = sub(n1, n2);
+		break;
 	case 2:
 		result = mul(n1, n2);
+		break;
 	}
 
 	printf("%d\n", result);
 }
 #endif
 
-#if 1 
+#if 0
 #include <stdio.h>
 // 이전의 코드는 기능에 비해 코드가 장황하다는 단점이 있습니다.
 int add(int a, int b) { return a + b; }
