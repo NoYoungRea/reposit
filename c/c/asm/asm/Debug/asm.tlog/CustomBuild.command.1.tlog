@@ -1,0 +1,2 @@
+^D:\1고급C\ASM\ASM\FIRST.ASM
+nasm -f win32 -o first.obj first.asm
